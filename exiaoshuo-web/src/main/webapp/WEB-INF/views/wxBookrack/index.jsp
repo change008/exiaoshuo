@@ -47,7 +47,7 @@
 				</a> <span class="del" data-bid="${racks.getBookid() }"><span class="verticalAlign"></span><label>删除</label></span></li>
 			</c:forEach>
 		</ul>
-		<div style="background-color: #FF8C00; padding: 8px 10px;">
+		<div style="background-color: #CDAA7D; padding: 8px 10px;">
 			<u><a style="color:white" href="<%=path%>/?fm=${fromurl}">去首页看更多精彩图书</a></u>
 		</div>
 	</div>

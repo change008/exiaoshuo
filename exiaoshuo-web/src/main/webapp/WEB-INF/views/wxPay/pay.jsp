@@ -105,7 +105,7 @@
 	</div>
 
 	 
-<div style="background-color: #FF8C00;padding: 8px 10px;">
+<div style="background-color: #CDAA7D;padding: 8px 10px;">
 	<a style="color:white" href="http://mp.weixin.qq.com/s?__biz=MzU0MzEyOTQ1Mw==&mid=100000003&idx=1&sn=e7d5046ab13faa4d4c9144681e569319&chksm=7b116b014c66e217a5abee1d18bad4cfe12b872abd252781d79c8e27c9dcbafcdd630629d7be#rd">
 		点击关注公众号“<span style="color:#2897ed;border-bottom:1px solid">蛋黄小说</span>”方便下次继续阅读
 	</a>
