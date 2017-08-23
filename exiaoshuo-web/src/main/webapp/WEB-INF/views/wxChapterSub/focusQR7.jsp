@@ -58,7 +58,7 @@ fieldset {
 	    	<img style="width:242.5px;heigth:120.5px;" src="<%=path %>/static/image/qrcode_7.jpg">
 		</div> 	
 		 <div style="text-align: center;margin-bottom:5px;font-size: 17px;margin-top: 10px;">
-			如果无法识别二维码可在微信公众号中搜索：<span style="color: #fb6d6b">蛋黄小说</span>关注后可继续阅读
+			如果无法识别二维码可在微信公众号中搜索：<span style="color: #fb6d6b">爱漾小说</span>关注后可继续阅读
 		</div>
 		</div>
 	</article>

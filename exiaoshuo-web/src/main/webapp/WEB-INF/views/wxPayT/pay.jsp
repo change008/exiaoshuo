@@ -86,8 +86,8 @@
 
 	 
 <div style="background-color: #CDAA7D;padding: 8px 10px;">
-	<a href="http://mp.weixin.qq.com/s?__biz=MzU0MzEyOTQ1Mw==&mid=100000003&idx=1&sn=e7d5046ab13faa4d4c9144681e569319&chksm=7b116b014c66e217a5abee1d18bad4cfe12b872abd252781d79c8e27c9dcbafcdd630629d7be#rd">
-		点击关注公众号“<span style="color:#2897ed;border-bottom:1px solid">蛋黄小说/span>”阅读更多精彩美文
+	<a href="http://mp.weixin.qq.com/s?__biz=MzU0MDE2NzA4Mw==&mid=100000007&idx=1&sn=09df81a816edb1ec32a0d3bc5fa3b5e5&chksm=7b3c1fc34c4b96d552ccabba5022a03b544ecbadea60b019e5d6de3b444113ce8516d4fa7038#rd">
+		点击关注公众号“<span style="color:#2897ed;border-bottom:1px solid">爱漾小说</span>”阅读更多精彩美文
 	</a>
 </div>
  

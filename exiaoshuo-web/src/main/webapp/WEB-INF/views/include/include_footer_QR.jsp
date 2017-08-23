@@ -4,5 +4,5 @@
 	<legend class="tc">长按识别 即可添加</legend>
 </fieldset>
 <div style="text-align: center;">
-	<img style="width: 242.5px; heigth: 120.5px;" src="<%=request.getContextPath()%>/static/image/QRCodeDanhuang.png">
+	<img style="width: 242.5px; heigth: 120.5px;" src="<%=request.getContextPath()%>/static/image/qrcode_001.jpg">
 </div>

@@ -115,7 +115,7 @@ public class WxPayServiceImpl implements IWxPayService {
 		unifiedorder.setMch_id(WxConstants.WxMch_Id);
 		unifiedorder.setNonce_str(UUID.randomUUID().toString().replace("-", ""));
 		unifiedorder.setSign_type(WxConstants.WxMch_SignType);
-		unifiedorder.setBody("蛋黄小说充值");
+		unifiedorder.setBody("快悦阅读充值");
 		unifiedorder.setOut_trade_no(wxPay.getOrdernum());
 		unifiedorder.setTotal_fee((String.valueOf(money)));
 		unifiedorder.setSpbill_create_ip(remoteAdd);

@@ -55,7 +55,7 @@ fieldset {
 			<p style="color:red;">识别二维码关注公众号，继续阅读！</p>
 		</div>
 		<div style="text-align:center;">
-	    	<img style="width:242.5px;heigth:120.5px;" src="<%=path %>/static/image/QRCodeJiandan.png">
+	    	<img style="width:242.5px;heigth:120.5px;" src="<%=path %>/static/image/qrcode_002.jpg">
 		</div> 	
 		 <div style="text-align: center;margin-bottom:5px;font-size: 17px;margin-top: 10px;">
 			如果无法识别二维码可在微信公众号中搜索：<span style="color: #fb6d6b">煎蛋小说</span>关注后可继续阅读

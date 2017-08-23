@@ -122,7 +122,7 @@ public class WxUserServiceImpl implements IWxUserService{
 	    	wxUser.setMobile("");
 	    	wxUser.setName(wxSnsUser.getNickname().replaceAll("[\\x{10000}-\\x{10FFFF}]", ""));
 	    	if(wxUser.getName()==null||wxUser.getName().isEmpty()||"".contains(wxUser.getName())){
-	    		wxUser.setName("wc_"+DateUtil.date2Str(new Date(), "DATE_FORMAT_YYYYMMDDHHmmdd"));
+	    		wxUser.setName("wc_"+DateUtil.date2Str(new Date(), DateUtil.DATE_FORMAT_YYYYMMDDHHmmdd));
 	    	}
 	    	wxUser.setOpenid(wxSnsUser.getOpenid());
 	    	wxUser.setProvince(wxSnsUser.getProvince());
