@@ -59,8 +59,8 @@ fieldset {
 	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
 			: " http://");
 	document
-			.write(unescape("%3Cspan id='cnzz_stat_icon_1262618547'%3E%3C/span%3E%3Cscript src='"
+			.write(unescape("%3Cspan id='cnzz_stat_icon_1263790946'%3E%3C/span%3E%3Cscript src='"
 					+ cnzz_protocol
-					+ "w.cnzz.com/q_stat.php%3Fid%3D1262618547' type='text/javascript'%3E%3C/script%3E"));
+					+ "w.cnzz.com/q_stat.php%3Fid%3D1263790946' type='text/javascript'%3E%3C/script%3E"));
 </script>
 </html>
