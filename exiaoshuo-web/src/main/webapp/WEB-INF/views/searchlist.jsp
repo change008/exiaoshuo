@@ -5,7 +5,7 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 
-<title>首页</title>
+<title>搜索小说</title>
 </head>
 
 <body>
@@ -27,6 +27,7 @@
 			</div>
 		</div>
 </form>
+<div class="mod_block"></div>
 <c:choose>
 <c:when test="${iptsearch!=null&&iptsearch!=''}">
 	<c:choose>

@@ -7,8 +7,8 @@
 <footer>
 
 	
-	<div style="background-color: #CDAA7D; padding: 8px 10px;">
-		<a style="color: white" href="http://mp.weixin.qq.com/s?__biz=MzU0MDE2NzA4Mw==&mid=100000007&idx=1&sn=09df81a816edb1ec32a0d3bc5fa3b5e5&chksm=7b3c1fc34c4b96d552ccabba5022a03b544ecbadea60b019e5d6de3b444113ce8516d4fa7038#rd"> 点击关注公众号“<span style="color: white; border-bottom: 1px solid">爱漾小说</span>”方便下次继续阅读
+	<div class="wxguanzhu">
+		<a href="http://mp.weixin.qq.com/s?__biz=MzU0MDE2NzA4Mw==&mid=100000007&idx=1&sn=09df81a816edb1ec32a0d3bc5fa3b5e5&chksm=7b3c1fc34c4b96d552ccabba5022a03b544ecbadea60b019e5d6de3b444113ce8516d4fa7038#rd"> 点击关注公众号“<span>爱漾小说</span>”方便下次继续阅读
 		</a>
 	</div>
 

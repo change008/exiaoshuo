@@ -20,8 +20,7 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 <body>
 	<article class="theme1">
 		<nav>
-			<span>${wxChapterSub.title}</span><a id="badge_menu" class="badge menu"
-				href="javascript:;">菜单</a>
+			<span>${wxChapterSub.title}</span>
 		</nav>
 		<div class="content" style="font-size: 18px;">
 			${wxChapterSub.content}</div>
@@ -136,9 +135,9 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 		</div>
 		
 		
+	</article>
     <%@ include file="/WEB-INF/views/include/include_footer_QR.jsp"%>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
-	</article>
 </body>
 
 <script type="text/javascript" src="<%=path %>/static/js/public.js"></script>

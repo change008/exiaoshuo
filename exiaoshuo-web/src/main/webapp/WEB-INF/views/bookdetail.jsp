@@ -6,16 +6,57 @@
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 <title>	${wxBook.getName()}</title>
 
+<style>
+.bg{
+	position:absolute;
+	left:0;
+	right:0;
+	top:-20px;
+	overflow:hidden;
+	text-align:center;
+	height:288px;
+}
+.bg img{
+	width:110%;
+	filter:blur(18px);
+	-webkit-filter:blur(18px);
+	opacity:0.15;
+}
+.panel{
+	top:0;
+	left:0;
+	position:relative;
+	background:linear-gradient(to top,#fff,rgba(255,255,255,0) 8rem) no-repeat center bottom;
+}
+.bookinfo-title{
+	height:26px;
+	margin-bottom:20px;
+	font-size:18px;
+	color:#333333;
+}
+.bookinfoback{
+	display:inline-block;
+	width:26px;
+	height:26px;
+	text-align:center;
+	font-size:24px;
+	float:left;
+	line-height:21px;
+}
 
+</style>
 </head>
 <body>
-<header class="nav wrap">
-	<a class="ico52 back" href="javascript:history.go(-1);"></a>书籍信息<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
-<div class="book_title wrap">${wxBook.getName()}</div>
+
 <input type="hidden" id="bookid" name="bookid" value="${wxBook.getId()}">
 <input type="hidden" id="bookname" name="bookname" value="${wxBook.getName()}">
+<div class="bg">
+	<img src="${wxBook.getCoverImgs()}"/>
+</div>
 <div class="panel">
+	<div class="bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1);">«</a>&nbsp;&nbsp;${wxBook.getName()}</a>
+	</div>
 	<div class="fn-clear">
         <img class="cover fn-left lazy" style="margin-top:0px;" src="${wxBook.getCoverImgs()}" dataimg="${wxBook.getCoverImgs()}" width="80px" height="112px">
 		<ul class="book_info">
@@ -39,27 +80,26 @@
 		</li>
 		<li>
 		<c:if test="${bookrack.bookid>0}">
-		<span class="btn white block add-fav disabled" id="btn-addbookrack" data-bid="${wxBook.getId()}" data-name="${wxBook.getName()}">
-		已添加</span>
+		<a href="javascript:void(0)" class="btn white block add-fav disabled" id="btn-addbookrack" data-bid="${wxBook.getId()}" data-name="${wxBook.getName()}">
+		已添加</a>
 		</c:if>
 		<c:if test="${bookrack==null||bookrack.bookid<=0}">
-		<span class="btn white block add-fav" id="btn-addbookrack" data-bid="${wxBook.getId()}" data-name="${wxBook.getName()}">
-		加入书架</span>
+		<a href="javascript:void(0)" class="btn white block add-fav" id="btn-addbookrack" data-bid="${wxBook.getId()}" data-name="${wxBook.getName()}">
+		加入书架</a>
 		</c:if>
 		
 		</li>
-	</ul>
-        <a href="<%=path %>/wxChapter/index?bookId=${wxBook.getId()}&fm=${fromurl}" class="btn block white">全部章节目录</a>
-	<ul class="continue_read fn-clear fn-hide">
-		<li class="orange">上次读到：<span></span></li>
-		<li><a class="fn-left" href="#">本章»</a><a class="fn-right" href="#">下章»</a></li>
+		<li><a href="<%=path %>/wxChapter/index?bookId=${wxBook.getId()}&fm=${fromurl}" class="btn block white">章节目录</a></li>
 	</ul>
 </div>
+
+<div class="mod_title c0">
+	<h1 class="f17"> <i class="home-icon-tit home-icon-tit-b"></i> 小说介绍 </h1>
+</div>
 <div class="book_intro">
-	<p id="summary" style="height: 120px;">
+	<p id="summary">
 	 ${wxBook.getIntr()}
 	</p>
-	<p id="showSummary" class="arrow"><a href="#" onclick="showmoreintr()">展开</a></p>
 </div>
 
 
@@ -101,20 +141,6 @@ $(function(){
 		
 	});
 });
-
-function showmoreintr(){
-    var content=$("#showSummary a").html();
-    if(content=="展开"){
-    	$("#showSummary").addClass("up");
-    	$("#showSummary a").html("折叠");
-    	$("#summary").css("height","auto");
-    	
-    }else{
-    	$("#showSummary").removeClass("up");
-    	$("#summary").css("height","120px");
-    	$("#showSummary a").html("展开");
-    }
-}
 	
 </script>
 </html>

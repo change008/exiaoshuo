@@ -3,9 +3,9 @@ html {
 	background: #fff;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-}
+} 
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
+/* 鍐呭杈硅窛閫氬父璁╁悇涓祻瑙堝櫒鏍峰紡鐨勮〃鐜颁綅缃笉鍚� */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
 	form, fieldset, legend, input, textarea, p, blockquote, th, td, hr,
 	button, article, aside, details, figcaption, figure, footer, header,
@@ -25,20 +25,20 @@ body {
 	word-wrap: break-word;
 }
 
-/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+/* 閲嶈 HTML5 鏍囩, IE 闇�瑕佸湪 js 涓� createElement(TAG) */
 article, aside, details, figcaption, figure, footer, header, hgroup,
 	menu, nav, section {
 	display: block;
 }
 
-/* HTML5 媒体文件跟 img 保持一致 */
+/* HTML5 濯掍綋鏂囦欢璺� img 淇濇寔涓�鑷� */
 audio, canvas, video {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
 }
 
-/* 要注意表单元素并不继承父级 font 的问题 */
+/* 瑕佹敞鎰忚〃鍗曞厓绱犲苟涓嶇户鎵跨埗绾� font 鐨勯棶棰� */
 body, button, input, select, textarea {
 	/*font:15px/1.5 tahoma,arial,"Hiragino Sans GB",\5b8b\4f53;*/
 	font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
@@ -50,34 +50,34 @@ input, select, textarea {
 	font-size: 100%;
 }
 
-/* 去掉各Table cell 的边距并让其边重合 */
+/* 鍘绘帀鍚凾able cell 鐨勮竟璺濆苟璁╁叾杈归噸鍚� */
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-/* IE bug fixed: th 不继承 text-align*/
+/* IE bug fixed: th 涓嶇户鎵� text-align*/
 th {
 	text-align: inherit;
 }
 
-/* 去除默认边框 */
+/* 鍘婚櫎榛樿杈规 */
 fieldset, img {
 	border: 0;
 }
 
-/* ie6 7 8(q) bug 显示为行内表现 */
+/* ie6 7 8(q) bug 鏄剧ず涓鸿鍐呰〃鐜� */
 iframe {
 	display: block;
 }
 
-/* 去掉 firefox 下此元素的边框 */
+/* 鍘绘帀 firefox 涓嬫鍏冪礌鐨勮竟妗� */
 abbr, acronym {
 	border: 0;
 	font-variant: normal;
 }
 
-/* 一致的 del 样式 */
+/* 涓�鑷寸殑 del 鏍峰紡 */
 del {
 	text-decoration: line-through;
 }
@@ -87,17 +87,17 @@ address, caption, cite, code, dfn, em, th, var {
 	font-weight: 500;
 }
 
-/* 去掉列表前的标识, li 会继承 */
+/* 鍘绘帀鍒楄〃鍓嶇殑鏍囪瘑, li 浼氱户鎵� */
 ol, ul {
 	list-style: none;
 }
 
-/* 对齐是排版最重要的因素, 别让什么都居中 */
+/* 瀵归綈鏄帓鐗堟渶閲嶈鐨勫洜绱�, 鍒浠�涔堥兘灞呬腑 */
 caption, th {
 	text-align: left;
 }
 
-/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+/* 鏉ヨ嚜yahoo, 璁╂爣棰橀兘鑷畾涔�, 閫傚簲澶氫釜绯荤粺搴旂敤 */
 h1, h2, h3, h4, h5, h6 {
 	font-size: 100%;
 	font-weight: 500;
@@ -107,7 +107,7 @@ q:before, q:after {
 	content: '';
 }
 
-/* 统一上标和下标 */
+/* 缁熶竴涓婃爣鍜屼笅鏍� */
 sub, sup {
 	font-size: 75%;
 	line-height: 0;
@@ -123,32 +123,23 @@ sub {
 	bottom: -0.25em;
 }
 
-/* 正常链接 未访问 */
-a:link {
+/* 姝ｅ父閾炬帴 鏈闂� */
+a {
 	color: #313030;
 }
 
-/* 鼠标悬停 */
-a:hover {
-	color: #313030;
-}
-
-a:visited {
-	color: #313030;
-}
-
-/* 默认不显示下划线，保持页面简洁 */
+/* 榛樿涓嶆樉绀轰笅鍒掔嚎锛屼繚鎸侀〉闈㈢畝娲� */
 ins, a {
 	text-decoration: none;
 }
 
-/* 代码字体 */
+/* 浠ｇ爜瀛椾綋 */
 code, kbd, pre, samp {
 	font-family: monospace, serif;
 	font-size: 1em;
 }
 
-/* 清理浮动 */
+/* 娓呯悊娴姩 */
 .fn-clear:after {
 	visibility: hidden;
 	display: block;
@@ -162,12 +153,12 @@ code, kbd, pre, samp {
 	zoom: 1; /* for IE6 IE7 */
 }
 
-/* 隐藏, 通常用来与 JS 配合 */
+/* 闅愯棌, 閫氬父鐢ㄦ潵涓� JS 閰嶅悎 */
 .fn-hide {
 	display: none;
 }
 
-/* 设置内联, 减少浮动带来的bug */
+/* 璁剧疆鍐呰仈, 鍑忓皯娴姩甯︽潵鐨刡ug */
 .fn-left, .fn-right {
 	display: inline;
 }
@@ -184,14 +175,14 @@ code, kbd, pre, samp {
 	color: #999;
 }
 
-/* 单行文字溢出时出现省略号，需设定宽度 */
+/* 鍗曡鏂囧瓧婧㈠嚭鏃跺嚭鐜扮渷鐣ュ彿锛岄渶璁惧畾瀹藉害 */
 .fn-text-overflow {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-/* 简单的渐变 */
+/* 绠�鍗曠殑娓愬彉 */
 .fn-linear {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc),
 		to(#f1f1f1));
@@ -203,7 +194,7 @@ code, kbd, pre, samp {
 	background: linear-gradient(to bottom, #fcfcfc, #f1f1f1);
 }
 
-/* 浅色的渐变 */
+/* 娴呰壊鐨勬笎鍙� */
 .fn-linear-light {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc),
 		to(#f9f9f9));
@@ -215,14 +206,14 @@ code, kbd, pre, samp {
 	background: linear-gradient(to bottom, #fcfcfc, #f9f9f9);
 }
 
-/* 人民币符号 */
+/* 浜烘皯甯佺鍙� */
 .fn-rmb {
 	font-family: arial;
 	font-style: normal;
 	padding-right: 4px;
 }
 
-/* chrome 下字体过小的问题 */
+/* chrome 涓嬪瓧浣撹繃灏忕殑闂 */
 .fn-webkit-adjust {
 	-webkit-text-size-adjust: none;
 }
@@ -477,17 +468,18 @@ code, kbd, pre, samp {
 
 header {
 	height: 44px;
-	background: #CDAA7D;
+	background: #000000;
 	position: relative;
 	top: 0;
 	left: 0;
 	line-height: 43px;
-}
+	color:#ffffff;
+}  
 
 header .logo {
 	position: absolute;
 	display: inline-block;
-	width: 5.6rem;
+	width: 35%;
 	height: 2.11rem;
 	top: 6px;
 	left: 10px;
@@ -510,11 +502,11 @@ header ul>li {
 	float: left;
 }
 
-header>ul>li>a {
+header ul>li>a {
 	display: inline-block;
 	padding: 0 8px;
 	color: #FFF !important;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 header .msg_num {
@@ -688,7 +680,7 @@ dl.user_area .sp {
 
 .mod_title a {
 	float: right;
-	color: #02b2cc;
+	color: #27887d;
 	font-size: 13px
 }
 
@@ -696,14 +688,16 @@ dl.user_area .sp {
 	float: none;
 	overflow: hidden;
 	background-color: #fff;
+	padding: 0 5px 5px 5px;
 }
 
-.mod_title.mod_lastread {
-	border-top-color: #27afb0
-}
-
-.mod_title.mod_lastread h1 a {
-	float: none;
+.mod_lastread a {
+	color: #27887d;
+	font-size: 14px;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
 }
 /*
 .mod_title.c0{border-top-color: #ff6464}
@@ -720,7 +714,7 @@ dl.user_area .sp {
 .mod_title.c5 h1{color: #ff6b95;}
 */
 .home-icon-tit-b {
-	background-color: #e95e56;
+	background-color: #c7a116;
 }
 
 .home-icon-tit {
@@ -742,7 +736,7 @@ dl.user_area .sp {
 .mod_content ul li {
 	overflow: auto;
 	border-bottom: 1px #d4d4d4 dotted;
-	padding: 5px;
+	padding: 10px 5px 5px 5px;
 }
 
 .mod_content ul li:last-child {
@@ -750,7 +744,7 @@ dl.user_area .sp {
 }
 
 img.lazy {
-	margin: 10px 8px 8px 0;
+	margin: 0px 8px 8px 0;
 	border: 1px #eee solid;
 	width: 80px;
 	height: 108px;
@@ -783,11 +777,16 @@ img.lazy.small {
 	line-height: 1.5em
 }
 
+.mod_content .bookname{
+	line-height:22px;
+	margin-bottom:5px;
+}
+
 .mod_content .intro {
 	color: #999;
 	font-size: 14px;
-	line-height: 1.8em;
-	height: 5.8em;
+	line-height: 21px;
+	max-height: 5.8em;
 	overflow: hidden;
 }
 
@@ -980,17 +979,16 @@ ul.mod_tab_title li:first-child.current {
 
 footer {
 	background-color: #f9f8f8;
-	border-top: 2px #c8c9d0 solid;
-	text-align: left;
-	font-size: 16px;
-	padding: 10px;
+	margin-top:15px;
+	text-align: center;
+	font-size: 14px;
+	padding: 10px 0;
 }
 
 footer p {
 	line-height: 40px;
 	padding-top: 8px;
 	overflow: auto;
-	text-align: left
 }
 
 footer p a {
@@ -1192,12 +1190,12 @@ footer .cblue {
 }
 
 .btn {
-	border: 1px solid #CDAA7D;
-	background: #CDAA7D;
+	border: 1px solid #000000;
+	background: #444444;
 	text-align: center;
 	color: #fff;
-	height: 40px;
-	line-height: 39px;
+	height: 35px;
+	line-height: 34px;
 	padding: 0 8px;
 	margin: 12px auto;
 	display: inline-block;
@@ -1377,7 +1375,9 @@ div.err_msg {
 	height: 120px;
 	border: 1px solid #eee;
 }
-
+.panel .book_info{
+	line-height: 30px;
+}
 .panel .book_info label {
 	color: #b7b7b7
 }
@@ -1388,15 +1388,11 @@ div.err_msg {
 
 .panel ul.btn_area li {
 	float: left;
-	width: 50%
+	width: 33%
 }
 
-.panel ul.btn_area li:first-child a {
-	margin-right: 6px;
-}
-
-.panel ul.btn_area li:last-child a {
-	margin-left: 6px;
+.panel ul.btn_area li  a {
+	width:90%;
 }
 
 .panel ul.continue_read {
@@ -1409,8 +1405,8 @@ div.err_msg {
 
 .book_intro {
 	background-color: #fff;
-	padding: 12px;
-	line-height: 20px;
+	padding: 8px 12px;
+	line-height: 22px;
 	color: #7d7d87;
 }
 
@@ -1437,6 +1433,7 @@ ul.menu a {
 
 ul.menu li {
 	padding: 0 12px;
+	border-bottom:solid 1px #f5f5f5;
 }
 
 ul.menu li a.chapter {
@@ -1448,13 +1445,6 @@ ul.menu li a.chapter {
 	white-space: nowrap;
 }
 
-ul.menu li:nth-of-type(even) {
-	background: #f3f3f3
-}
-
-ul.menu li:nth-of-type(odd) {
-	background: #f9f8f8
-}
 
 ul.pager {
 	background: #f9f8f8;
@@ -1485,7 +1475,7 @@ ul.pagebar {
 	background: rgba(255, 255, 255, 0.8);
 	width: 100%
 }
-/*select美化*/
+/*select缇庡寲*/
 .select_area {
 	border: 1px solid #d4d4d4;
 	color: #313030;
@@ -1783,27 +1773,27 @@ article.theme3 {
 }
 
 article.theme1 .tool_top, article.theme1 .tool_bottom {
-	background: #f9f9f9;
+	background: #000000;
 }
 
 article.theme2 .tool_top, article.theme2 .tool_bottom {
-	background: #383838;
+	background: #000000;
 }
 
 article.theme3 .tool_top, article.theme3 .tool_bottom {
-	background: #e6e0bd;
+	background: #000000;
 }
 
 article.theme1 .tool_top  ul li a, article.theme1 .tool_bottom ul li a {
-	color: #333;
+	color: #ffffff;
 }
 
 article.theme2 .tool_top ul li a, article.theme2 .tool_bottom ul li a {
-	color: #999
+	color: #ffffff
 }
 
 article.theme3 .tool_top ul li a, article.theme3 .tool_bottom ul li a {
-	color: #784100
+	color: #ffffff
 }
 
 article.theme1>ul.chapter_pager li a {
@@ -1866,6 +1856,8 @@ article>div.content {
 article>div.content p {
 	line-height: 1.8em;
 	margin: 0.8em 0;
+	text-align:justify;
+	text-indent: 2em;
 }
 
 article>div.content .author_note {
@@ -1987,14 +1979,10 @@ article>ul.chapter_pager li a {
 }
 
 .tool_option ul {
-	margin: 0 12px;
 	padding: 12px;
-	background: #f9f6e5;
-	border: 1px solid #ddd0a6;
-	border-radius: 3px;
-	box-shadow: 0 1px 10px rgba(21, 20, 19, .35);
+	background: #000000;
 	line-height: 36px;
-	color: #333
+	color: #ffffff;
 }
 
 .tool_option ul li {
@@ -2284,9 +2272,9 @@ ul.book-list div {
 
 .adv_title {
 	padding: 6px 0;
-	color: #02b2cc;
+	color: #27887d;
 	text-align: center;
-	border-bottom: 2px solid #02b2cc
+	border-bottom: 2px solid #27887d
 }
 
 .shelf {
@@ -2295,6 +2283,7 @@ ul.book-list div {
 
 .shelf>ul>li {
 	position: relative;
+	margin-bottom:10px;
 }
 
 .shelf>ul>li>.del {
@@ -2932,118 +2921,70 @@ span.current.btn-paychannel {
 	vertical-align: text-bottom;
 	text-align: center;
 }
-
+.wxguanzhu{
+	background-color: #000000;
+	padding: 8px 10px;
+}
+.wxguanzhu a{
+	color:#ffffff;
+}
+.wxguanzhu a span{
+	color:#c7a116;
+	text-decoration: underline;
+}
 /*搜索*/
-.searchbox {
-	width: 99%;
-	border: solid 1px #e0e0e0;
-	height: 37px;
-	margin: auto
+.searchbox{ width:99%; border:solid 1px #e0e0e0; height:37px; margin:auto}
+.searchbox .searchd1{padding-left:10px; float:left; width:84%;}
+.searchbox .searchd2{ width:34px; padding:2px; float:right;}
+.searchbox .searchtxt{ width:100%;height:35px; border:0; display:block;box-shadow:none;padding:0;}
+.searchbox .searchbtn{ width:100%;height:33px; border:0; display:block;background:url(http://r.itiexue.net/wap/shuku/cp-bg.png) no-repeat -80px -45px;border-radius:0;}
+
+.guide-qr{
+	margin:15px 0 180px 0;
 }
 
-.searchbox .searchd1 {
-	padding-left: 10px;
-	float: left;
-	width: 84%;
+.guide-qr p{
+	text-align:center;
+	font-size:18px;	
+	margin-bottom:10px;
+	color:black;
 }
 
-.searchbox .searchd2 {
-	width: 34px;
-	padding: 2px;
-	float: right;
+.guide-qr p strong{
+	font-weight:bold;
+	color:#ff6600;
 }
 
-.searchbox .searchtxt {
-	width: 100%;
-	height: 35px;
-	border: 0;
-	display: block;
-	box-shadow: none;
-	padding: 0;
-}
-
-.searchbox .searchbtn {
-	width: 100%;
-	height: 33px;
-	border: 0;
-	display: block;
-	background: url(http://r.itiexue.net/wap/shuku/cp-bg.png) no-repeat
-		-80px -45px;
-	border-radius: 0;
-}
-
-.guide-qr {
-	margin: 15px 0 180px 0;
-}
-
-.guide-qr p {
-	text-align: center;
-	font-size: 18px;
-	margin-bottom: 10px;
-	color: black;
-}
-
-.guide-qr p strong {
-	font-weight: bold;
-	color: #ff6600;
-}
-
-.guide-qr p img {
-	width: 150px;
+.guide-qr p img{
+	width:150px;
 }
 
 .guide-qr .arrows {
-	height: 35px;
-	position: relative;
-}
-
-.guide-qr .arrows span {
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	left: 50%;
-	margin-left: -15px;
-	display: inline-block;
-	color: #ff6600;
-	animation: myfirst 0.3s linear 0s infinite alternate;;
-}
-
-@
--webkit-keyframes myfirst {
-	from {top: 0
-}
-
-to {
-	top: 15px;
-}
-
-}
-@
--moz-keyframes myfirst {
-	from {top: 0
-}
-
-to {
-	top: 15px;
-}
-
-}
-@
--o-keyframes myfirst {
-	from {top: 0
-}
-
-to {
-	top: 15px;
-}
-
-}
-@
-keyframes myfirst {
-	from {top: 0
-}
-
-to {
-	top: 15px;
-}
-}
+	height:35px;
+	position:relative;}
+.guide-qr .arrows span{
+			position:absolute;
+			width:30px; 
+			height:30px;
+			left:50%;
+			margin-left:-15px;
+			display:inline-block; 
+			color:#ff6600;
+			animation:myfirst 0.3s linear 0s infinite alternate;;
+		}
+		@-webkit-keyframes myfirst{
+			from{top:0}
+			to{top:15px;}
+		}
+		@-moz-keyframes myfirst{
+			from{top:0}
+			to{top:15px;}
+		}
+		@-o-keyframes myfirst{
+			from{top:0}
+			to{top:15px;}
+		}
+		@keyframes myfirst{
+			from{top:0}
+			to{top:15px;}
+		}
