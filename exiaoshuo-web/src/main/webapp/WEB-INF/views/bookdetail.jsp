@@ -22,27 +22,6 @@
 	-webkit-filter:blur(18px);
 	opacity:0.15;
 }
-.panel{
-	top:0;
-	left:0;
-	position:relative;
-	background:linear-gradient(to top,#fff,rgba(255,255,255,0) 8rem) no-repeat center bottom;
-}
-.bookinfo-title{
-	height:26px;
-	margin-bottom:20px;
-	font-size:18px;
-	color:#333333;
-}
-.bookinfoback{
-	display:inline-block;
-	width:26px;
-	height:26px;
-	text-align:center;
-	font-size:24px;
-	float:left;
-	line-height:21px;
-}
 
 </style>
 </head>

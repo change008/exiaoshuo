@@ -83,7 +83,6 @@
 </c:otherwise>
 </c:choose>
 
-<div class="mod_block"></div>
 
 <!-- <div>
 <a href="#" onclick="testaddcookie()">测试登录</a>

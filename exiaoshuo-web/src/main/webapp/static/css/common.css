@@ -5,7 +5,7 @@ html {
 	-ms-text-size-adjust: 100%;
 } 
 
-/* 鍐呭杈硅窛閫氬父璁╁悇涓祻瑙堝櫒鏍峰紡鐨勮〃鐜颁綅缃笉鍚� */
+/* 閸愬懎顦绘潏纭呯獩闁艾鐖剁拋鈺佹倗娑擃亝绁荤憴鍫濇珤閺嶅嘲绱￠惃鍕�冮悳棰佺秴缂冾喕绗夐崥锟� */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
 	form, fieldset, legend, input, textarea, p, blockquote, th, td, hr,
 	button, article, aside, details, figcaption, figure, footer, header,
@@ -25,20 +25,20 @@ body {
 	word-wrap: break-word;
 }
 
-/* 閲嶈 HTML5 鏍囩, IE 闇�瑕佸湪 js 涓� createElement(TAG) */
+/* 闁插秷顔� HTML5 閺嶅洨顒�, IE 闂囷拷鐟曚礁婀� js 娑擄拷 createElement(TAG) */
 article, aside, details, figcaption, figure, footer, header, hgroup,
 	menu, nav, section {
 	display: block;
 }
 
-/* HTML5 濯掍綋鏂囦欢璺� img 淇濇寔涓�鑷� */
+/* HTML5 婵帊缍嬮弬鍥︽鐠猴拷 img 娣囨繃瀵旀稉锟介懛锟� */
 audio, canvas, video {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
 }
 
-/* 瑕佹敞鎰忚〃鍗曞厓绱犲苟涓嶇户鎵跨埗绾� font 鐨勯棶棰� */
+/* 鐟曚焦鏁為幇蹇氥�冮崡鏇炲帗缁辩姴鑻熸稉宥囨埛閹佃法鍩楃痪锟� font 閻ㄥ嫰妫舵０锟� */
 body, button, input, select, textarea {
 	/*font:15px/1.5 tahoma,arial,"Hiragino Sans GB",\5b8b\4f53;*/
 	font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
@@ -50,34 +50,34 @@ input, select, textarea {
 	font-size: 100%;
 }
 
-/* 鍘绘帀鍚凾able cell 鐨勮竟璺濆苟璁╁叾杈归噸鍚� */
+/* 閸樼粯甯�閸氬嚲able cell 閻ㄥ嫯绔熺捄婵嗚嫙鐠佲晛鍙炬潏褰掑櫢閸氾拷 */
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-/* IE bug fixed: th 涓嶇户鎵� text-align*/
+/* IE bug fixed: th 娑撳秶鎴烽幍锟� text-align*/
 th {
 	text-align: inherit;
 }
 
-/* 鍘婚櫎榛樿杈规 */
+/* 閸樺娅庢妯款吇鏉堣顢� */
 fieldset, img {
 	border: 0;
 }
 
-/* ie6 7 8(q) bug 鏄剧ず涓鸿鍐呰〃鐜� */
+/* ie6 7 8(q) bug 閺勫墽銇氭稉楦款攽閸愬懓銆冮悳锟� */
 iframe {
 	display: block;
 }
 
-/* 鍘绘帀 firefox 涓嬫鍏冪礌鐨勮竟妗� */
+/* 閸樼粯甯� firefox 娑撳顒濋崗鍐閻ㄥ嫯绔熷锟� */
 abbr, acronym {
 	border: 0;
 	font-variant: normal;
 }
 
-/* 涓�鑷寸殑 del 鏍峰紡 */
+/* 娑擄拷閼峰娈� del 閺嶅嘲绱� */
 del {
 	text-decoration: line-through;
 }
@@ -87,17 +87,17 @@ address, caption, cite, code, dfn, em, th, var {
 	font-weight: 500;
 }
 
-/* 鍘绘帀鍒楄〃鍓嶇殑鏍囪瘑, li 浼氱户鎵� */
+/* 閸樼粯甯�閸掓銆冮崜宥囨畱閺嶅洩鐦�, li 娴兼氨鎴烽幍锟� */
 ol, ul {
 	list-style: none;
 }
 
-/* 瀵归綈鏄帓鐗堟渶閲嶈鐨勫洜绱�, 鍒浠�涔堥兘灞呬腑 */
+/* 鐎靛綊缍堥弰顖涘笓閻楀牊娓堕柌宥堫洣閻ㄥ嫬娲滅槐锟�, 閸掝偉顔�娴狅拷娑斿牓鍏樼仦鍛厬 */
 caption, th {
 	text-align: left;
 }
 
-/* 鏉ヨ嚜yahoo, 璁╂爣棰橀兘鑷畾涔�, 閫傚簲澶氫釜绯荤粺搴旂敤 */
+/* 閺夈儴鍤測ahoo, 鐠佲晜鐖ｆ０姗�鍏橀懛顏勭暰娑旓拷, 闁倸绨叉径姘嚋缁崵绮烘惔鏃傛暏 */
 h1, h2, h3, h4, h5, h6 {
 	font-size: 100%;
 	font-weight: 500;
@@ -107,7 +107,7 @@ q:before, q:after {
 	content: '';
 }
 
-/* 缁熶竴涓婃爣鍜屼笅鏍� */
+/* 缂佺喍绔存稉濠冪垼閸滃奔绗呴弽锟� */
 sub, sup {
 	font-size: 75%;
 	line-height: 0;
@@ -123,23 +123,23 @@ sub {
 	bottom: -0.25em;
 }
 
-/* 姝ｅ父閾炬帴 鏈闂� */
+/* 濮濓絽鐖堕柧鐐复 閺堫亣顔栭梻锟� */
 a {
 	color: #313030;
 }
 
-/* 榛樿涓嶆樉绀轰笅鍒掔嚎锛屼繚鎸侀〉闈㈢畝娲� */
+/* 姒涙顓绘稉宥嗘▔缁�杞扮瑓閸掓帞鍤庨敍灞肩箽閹镐線銆夐棃銏㈢暆濞诧拷 */
 ins, a {
 	text-decoration: none;
 }
 
-/* 浠ｇ爜瀛椾綋 */
+/* 娴狅絿鐖滅�涙ぞ缍� */
 code, kbd, pre, samp {
 	font-family: monospace, serif;
 	font-size: 1em;
 }
 
-/* 娓呯悊娴姩 */
+/* 濞撳懐鎮婂ù顔煎З */
 .fn-clear:after {
 	visibility: hidden;
 	display: block;
@@ -153,12 +153,12 @@ code, kbd, pre, samp {
 	zoom: 1; /* for IE6 IE7 */
 }
 
-/* 闅愯棌, 閫氬父鐢ㄦ潵涓� JS 閰嶅悎 */
+/* 闂呮劘妫�, 闁艾鐖堕悽銊︽降娑擄拷 JS 闁板秴鎮� */
 .fn-hide {
 	display: none;
 }
 
-/* 璁剧疆鍐呰仈, 鍑忓皯娴姩甯︽潵鐨刡ug */
+/* 鐠佸墽鐤嗛崘鍛颁粓, 閸戝繐鐨ù顔煎З鐢附娼甸惃鍒g */
 .fn-left, .fn-right {
 	display: inline;
 }
@@ -175,14 +175,14 @@ code, kbd, pre, samp {
 	color: #999;
 }
 
-/* 鍗曡鏂囧瓧婧㈠嚭鏃跺嚭鐜扮渷鐣ュ彿锛岄渶璁惧畾瀹藉害 */
+/* 閸楁洝顢戦弬鍥х摟濠с垹鍤弮璺哄毉閻滄壆娓烽悾銉ュ娇閿涘矂娓剁拋鎯х暰鐎硅棄瀹� */
 .fn-text-overflow {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-/* 绠�鍗曠殑娓愬彉 */
+/* 缁狅拷閸楁洜娈戝〒鎰綁 */
 .fn-linear {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc),
 		to(#f1f1f1));
@@ -194,7 +194,7 @@ code, kbd, pre, samp {
 	background: linear-gradient(to bottom, #fcfcfc, #f1f1f1);
 }
 
-/* 娴呰壊鐨勬笎鍙� */
+/* 濞村懓澹婇惃鍕瑤閸欙拷 */
 .fn-linear-light {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc),
 		to(#f9f9f9));
@@ -206,14 +206,14 @@ code, kbd, pre, samp {
 	background: linear-gradient(to bottom, #fcfcfc, #f9f9f9);
 }
 
-/* 浜烘皯甯佺鍙� */
+/* 娴滅儤鐨敮浣侯儊閸欙拷 */
 .fn-rmb {
 	font-family: arial;
 	font-style: normal;
 	padding-right: 4px;
 }
 
-/* chrome 涓嬪瓧浣撹繃灏忕殑闂 */
+/* chrome 娑撳鐡ф担鎾圭箖鐏忓繒娈戦梻顕�顣� */
 .fn-webkit-adjust {
 	-webkit-text-size-adjust: none;
 }
@@ -439,6 +439,17 @@ code, kbd, pre, samp {
 	display: inline-block;
 	vertical-align: text-bottom;
 	text-align: center;
+}
+
+.icohome{
+	background: url(../image/home.png) transparent no-repeat;
+	background-size: 26px auto;
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	vertical-align: text-bottom;
+	text-align: center;
+	float:right;
 }
 
 .ico52.back {
@@ -1475,7 +1486,7 @@ ul.pagebar {
 	background: rgba(255, 255, 255, 0.8);
 	width: 100%
 }
-/*select缇庡寲*/
+/*select缂囧骸瀵�*/
 .select_area {
 	border: 1px solid #d4d4d4;
 	color: #313030;
@@ -1797,7 +1808,7 @@ article.theme3 .tool_top ul li a, article.theme3 .tool_bottom ul li a {
 }
 
 article.theme1>ul.chapter_pager li a {
-	background: #f9f6e5;
+	background: #f9f9f9;
 	color: #555;
 }
 
@@ -2932,7 +2943,7 @@ span.current.btn-paychannel {
 	color:#c7a116;
 	text-decoration: underline;
 }
-/*搜索*/
+/*鎼滅储*/
 .searchbox{ width:99%; border:solid 1px #e0e0e0; height:37px; margin:auto}
 .searchbox .searchd1{padding-left:10px; float:left; width:84%;}
 .searchbox .searchd2{ width:34px; padding:2px; float:right;}

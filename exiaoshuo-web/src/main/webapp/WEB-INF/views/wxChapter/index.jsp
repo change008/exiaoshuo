@@ -109,49 +109,76 @@
 	
 	
 	</style>
+<script type="text/javascript">
+	var isRequesting = false;
+	var hasDone = false;
+	
+	$(document).ready(function(){
+		$(document).bind("scroll", function (event) {
+	        if (!hasDone &&!isRequesting) {
+	        	
+	        	var dh = $(document).height()- $(window).height()-200;
+	            if ($(document).scrollTop() > dh ) {
+					
+					//这里使用jsonp请求更多的内容
+					/*$.ajax("url?jsonpCallback=jsonpCallback",{
+						type:"POST",
+						data:{index:10,count:10},
+						dataType:"jsonp",
+						complete:function(){									
+							isRequesting = false;
+						}					
+					});*/
+					
+					//临时测试
+					setTimeout(jsonpCallback,2000,[{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true}]);
+					isRequesting = true;
+	            };
+	        }
+	    });	
+	});
+	
+	function jsonpCallback(list)
+	{	
+		isRequesting = false;
+		if(!list || list.length==0)
+		{
+			hasDone = true;
+			return;
+		}
+		var buildHtml=function(vo){
+			var htmlNode = $("<li>");
+			
+			$("<a>").attr("href","/exiaoshuo-web/wxChapterSub/index?bookId="+vo.bookid+"&chapterId="+vo.chapterid)
+			.addClass("chapter")
+			.text(vo.title)
+			.appendTo(htmlNode);
+			
+			if(vo.isfree){
+				$("<span>").addClass("fn-right c999").text("免费").appendTo(htmlNode);
+			}
+			
+			return htmlNode;
+		};
+		
+		for(var i=0;i<list.length;i++)
+		{
+			var html = buildHtml(list[i]);
+			$("#container_menu").append(html);
+		}	
+	}
+</script>
 <title>${wxBook.name}</title>
 </head>
 <body>
 <input type="hidden" name="bookId" id="bookId" value="${bookId}">
 <input type="hidden" name="fromurl" id="fromurl" value="${fromurl}">
-	<header class="nav wrap">
-		<a class="ico52" href="<%=path%>/wxbook/detail?id=${bookId}&fm=${fromurl}"></a>
-		<div class="header-center">${wxBook.name}</div>
-		<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-	</header>
-	<div id="zjlb">
-		<div class="fenye">
-			<div class="fy">
-				<div id="spagebg"></div>
-				<div class="spage">
-					<c:forEach items="${chapNaviDtos }" var="navi">
-						<c:if test="${navi.isActive==true}">
-							<a class="xbk this tb">${navi.name} </a>
-						</c:if>
-					</c:forEach>
-				</div>
-				<div class="showpage r3"
-					style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1); display: none;">
-					<div class="bk">请选择章节</div>
-					<ul>
-						<c:forEach items="${chapNaviDtos }" var="navi">
-							<li>
-							<c:if test="${navi.isActive==true}">
-									<a class="xbk this tb">${navi.name} </a>
-								</c:if> <c:if test="${navi.isActive==false}">
-									<a class="xbk" href="<%=path%>${navi.url}">${navi.name}</a>
-								</c:if>
-								</li>
-						</c:forEach>
-						<li><a class="xbk">没有更多分页了！</a></li>
-					</ul>
-				</div>
-				<div id="spagebg"></div>
-			</div>
-			<div class="cc"></div>
-		</div>
+	<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;我的书架
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
 	</div>
-	<ul class="menu">
+
+	<ul class="menu" id="container_menu">
 		<c:if test="${wxChapters==null||fn:length(wxChapters)<=0}">
 			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 		</c:if>
@@ -169,41 +196,7 @@
 				</c:if>
 		    </li>
 		</c:forEach>
-
 	</ul>
-
-	<ul id="pager" class="pager">
-
-		<li class="four"><a class="btn white start"
-			href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=0">第一页</a></li>
-		<li class="four"><c:if test="${pager.prePage>=0 }">
-				<a class="btn white prev"
-					href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.prePage }&fm=${fromurl}">上一页</a>
-			</c:if> <c:if test="${pager.prePage<0 }">
-				<a class="btn white prev" href="#" disabled="disabled">上一页</a>
-			</c:if></li>
-		<li class="four"><c:if test="${pager.nextPage>0 }">
-				<a class="btn white next"
-					href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.nextPage }&fm=${fromurl}">下一页</a>
-			</c:if> <c:if test="${pager.nextPage<=0 }">
-				<a class="btn white next" href="#" disabled="disabled">上一页</a>
-			</c:if></li>
-		<li class="four"><a class="btn white end"
-			href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.lastPageNo }&fm=${fromurl}">最末页</a></li>
-	</ul>
-	<div
-		style="background: none repeat scroll 0 0 #F9F8F8; padding-left: 10px; padding-bottom: 10px">
-		跳转至 <input type="hidden" id="totalPage" value="${totalRecord }">
-		<input type="hidden" id="pageSize" value="${pager.pageSize }">
-		<input type="hidden" id="preUrl"
-			value="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=&fm=${fromurl}">
-		<input id="jump_page"
-			style="width: 40px; border: none; border-bottom: 1px solid #ccc; text-align: center"
-			type="text" name="p" value="${jumpPage }">页(共${totalRecord}) <input
-			id="jump_to" onclick="jumpPage()" class="btn white"
-			style="height: 35px; line-height: 35px" type="button" name="jumpto"
-			value="跳转">
-	</div>
 	
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>

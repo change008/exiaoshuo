@@ -19,8 +19,8 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 </head>
 <body>
 	<article class="theme1">
-		<nav>
-			<span>${wxChapterSub.title}</span>
+		<nav style="text-align:center;font-size:22px;color:#ff6600">
+			${wxChapterSub.title}
 		</nav>
 		<div class="content" style="font-size: 18px;">
 			${wxChapterSub.content}</div>
@@ -31,32 +31,32 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 			     <c:if test="${wxChapterSub.preType!=0}">
 			      <a class="chapter_prev btn white block"
 						data-cid="${wxChapterSub.preId}"
-						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&fm=${fromurl}">上一章</a>
+						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&fm=${fromurl}">上一章节</a>
 				 </c:if>
 				<c:if test="${wxChapterSub.preType==0}">
 			      <a class="chapter_prev btn white block"
 						data-cid="${wxChapterSub.preId}"
-						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&fm=${fromurl}">上一章</a>
+						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&fm=${fromurl}">上一章节</a>
 				 </c:if>
 			</c:if> <c:if test="${wxChapterSub.preId<=0 }">
 					<a class="chapter_prev btn white block" href="#"
-						disabled="disabled">上一章</a>
+						disabled="disabled">上一章节</a>
 				</c:if></li>
-			<li class="mulu"><a class="btn white block"
+			<li class="mulu"><a class="btn white block" style="border:none"
 				href="<%=path %>/wxChapter/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&fm=${fromurl}">目录</a></li>
 			<li class="pn">
 			<c:if test="${wxChapterSub.nextId>0 }">
 			     <c:if test="${wxChapterSub.nextType!=0}">
 			      <a  onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')"  class="chapter_next btn block" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下一章</a>
+						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下一章节</a>
 				 </c:if>
 				 <c:if test="${wxChapterSub.nextType==0}">
 			       <a  onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')"  class="chapter_next btn block" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下一章</a>
+						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下一章节</a>
 				 </c:if>
 			</c:if> 
 				<c:if test="${wxChapterSub.nextId<=0 }">
-					<a class="chapter_next btn block" href="#" disabled="disabled">下一章</a>
+					<a class="chapter_next btn block" href="#" disabled="disabled">下一章节</a>
 				</c:if></li>
 		</ul>
 
@@ -136,7 +136,6 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 		
 		
 	</article>
-    <%@ include file="/WEB-INF/views/include/include_footer_QR.jsp"%>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 
@@ -193,10 +192,12 @@ $("#btn-addbookrack").click(function(){
 });
 
 $("#badge_menu").click(function(){
+	return;
 	$(".tool_top").show();
 	$(".tool_bottom").show();
 });
 $(".content").click(function(){
+	return;
 	var display =$('.tool_top').css('display');
 	if(display == 'none'){
 		$(".tool_top").show();

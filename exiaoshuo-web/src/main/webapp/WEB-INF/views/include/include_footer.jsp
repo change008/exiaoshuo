@@ -4,20 +4,16 @@
 	String basePathFooter = request.getScheme() + "://" + request.getServerName() + ":"
 			+ request.getServerPort() + pathFooter + "/";
 %>
-<footer>
-
-	
-	<div class="wxguanzhu">
-		<a href="http://mp.weixin.qq.com/s?__biz=MzU0MDE2NzA4Mw==&mid=100000007&idx=1&sn=09df81a816edb1ec32a0d3bc5fa3b5e5&chksm=7b3c1fc34c4b96d552ccabba5022a03b544ecbadea60b019e5d6de3b444113ce8516d4fa7038#rd"> 点击关注公众号“<span>爱漾小说</span>”方便下次继续阅读
-		</a>
+<footer style="border-top:solid 1px #e3e2e2 ">
+	<div style="margin:auto;width:35%;">
+		<img width="100%" src="<%=request.getContextPath()%>/static/image/qrcode.jpg">
 	</div>
-
-	<p style="line-height: 20px">
-		<a href="<%=pathFooter%>/?fm=${fromurl}">首页</a><span class="sp"></span> <a href="<%=pathFooter%>/wxBookrack/list/?fm=${fromurl}" title="书架">书架</a> <span class="sp"></span><a href="#">客服</a> <span
-			class="sp"></span><a href="#">帮助</a>
-	</p>
+	
+	<p>长按关注公众号，方便下次继续阅读</p>
 	<p style="line-height: 22px;">
-		<span class="small">©2016 爱漾小说</span> <span class="small"> 京ICP备14034803号-5</span>
+		<span class="small">©2016 All Rights Reserved.</span> 
+		<span class="small">微盟（呼伦贝尔）文化传媒有限公司</span> 
+		<span class="small"> 蒙ICP备14034803号</span>
 	</p>
 	<script>
 		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"

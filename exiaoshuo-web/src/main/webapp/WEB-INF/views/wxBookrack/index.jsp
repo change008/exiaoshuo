@@ -8,9 +8,12 @@
 </head>
 
 <body>
-	<header class="nav wrap">
-		<a class="ico52 back" href="javascript:history.go(-1);"></a>我的书架<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-	</header>
+
+	<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;我的书架
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div>
+	
 	<div class="panel-bar">
 		<ul class="btn_area fn-clear">
 			<!-- 		<li><a class="btn  block " href="#">最近阅读</a></li>
@@ -47,9 +50,6 @@
 				</a> <span class="del" data-bid="${racks.getBookid() }"><span class="verticalAlign"></span><label>删除</label></span></li>
 			</c:forEach>
 		</ul>
-		<div style="background-color: #CDAA7D; padding: 8px 10px;">
-			<u><a style="color:white" href="<%=path%>/?fm=${fromurl}">去首页看更多精彩图书</a></u>
-		</div>
 	</div>
 
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
