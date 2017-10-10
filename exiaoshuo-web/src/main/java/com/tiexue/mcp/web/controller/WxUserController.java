@@ -71,6 +71,28 @@ public class WxUserController {
 		if(userIdStr!=null&&!userIdStr.isEmpty())
 			userId=Integer.parseInt(userIdStr);
 		WxUser userModel = userSer.selectByPrimaryKey(userId);
+		
+		
+		/*userModel = new WxUser();
+		userModel.setId(123456);
+		userModel.setName("小张");
+		userModel.setSignature("asdfasdfasd");
+		userModel.setPwd("asdf");
+		userModel.setSex(1);
+		userModel.setCity("beijing");
+		userModel.setUsertype(1);
+		userModel.setProvince("beijing");
+		userModel.setCoin(12211);
+		userModel.setDeadline(new Date());
+		userModel.setDevicecode("asdf123sd");
+		userModel.setStatus(2);
+		userModel.setMobile("12312312311");
+		userModel.setWeixintoken("asdfasfasfasdfasdfasdf");
+		userModel.setToken("tokken");
+		userModel.setFromname("local");*/
+		
+		
+		
 		if(userModel==null)
 			return "redirect:login";
 		WxUserDto userDtoModel = userDtoFill(userModel);

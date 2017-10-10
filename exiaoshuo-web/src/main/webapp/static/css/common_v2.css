@@ -130,12 +130,12 @@ header.header_v2 ul>li>a {
 	font-size: 14px;
 }
 .mod_content3_item {
-	width: 100px;
+	width: 140px;
 	display: inline-block;
 }
 .mod_content3_item a {
 	display: block;
-	width: 80%;
+	width: 75%;
 	margin: auto;
 	position: relative;
 }
@@ -143,6 +143,7 @@ header.header_v2 ul>li>a {
 	/*width:95px;
 	height:120px;*/
 	width: 100%;
+	box-shadow:1px 1px 2px 0px rgba(0,0,0,0.4);
 }
 .mod_content3_item a img.free {
 	width: 35px;
@@ -158,6 +159,18 @@ header.header_v2 ul>li>a {
 .mod_content3_item a p.author {
 	font-size: 12px;
 	color: #555;
+}
+.mod_fastico{
+	text-align:center;
+	padding:20px 0;
+}
+.mod_fastico a{
+	display:inline-block;
+	text-align:center;
+	width:80px;
+}
+.mod_fastico a img{
+	width:60px;
 }
 .mod_timerbox {
 	padding: 12px 0 0 100px;

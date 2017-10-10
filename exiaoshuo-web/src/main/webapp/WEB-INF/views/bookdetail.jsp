@@ -35,6 +35,7 @@
 <div class="panel">
 	<div class="bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1);">«</a>&nbsp;&nbsp;${wxBook.getName()}</a>
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
 	</div>
 	<div class="fn-clear">
         <img class="cover fn-left lazy" style="margin-top:0px;" src="${wxBook.getCoverImgs()}" dataimg="${wxBook.getCoverImgs()}" width="80px" height="112px">

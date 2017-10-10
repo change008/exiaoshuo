@@ -9,13 +9,14 @@
 </head>
 
 <body>
-<header class="nav wrap">
-	<a class="ico52 back" href="javascript:history.go(-1);"></a>用户登录<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;一键登录
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div>
 <div class="panel">
 	
 	<div class="other_login">
-        <div class="dsflogin"><span>免注册快速登录</span></div>
+        
 		<ul>
 			<li><a class="btn block btn_login" href="<%=path%>/wxUser/wxlogindo/?fm=${fromurl}"><span class="bgs login_wxpng"></span>微信登录</a></li>
 		</ul>

@@ -106,68 +106,21 @@
 .dise {
     background-color: #1ABC9C;
 }
+	.mod_pager{
+		text-align:center;
+		margin-top:15px;
+	}
 	
+	.mod_pager a{
+		background:#c7a116;
+		display:inline-block;
+		color:#ffffff;
+		line-height:35px;
+		padding:0 15px;
+	}
 	
 	</style>
-<script type="text/javascript">
-	var isRequesting = false;
-	var hasDone = false;
-	
-	$(document).ready(function(){
-		$(document).bind("scroll", function (event) {
-	        if (!hasDone &&!isRequesting) {
-	        	
-	        	var dh = $(document).height()- $(window).height()-200;
-	            if ($(document).scrollTop() > dh ) {
-					
-					//这里使用jsonp请求更多的内容
-					/*$.ajax("url?jsonpCallback=jsonpCallback",{
-						type:"POST",
-						data:{index:10,count:10},
-						dataType:"jsonp",
-						complete:function(){									
-							isRequesting = false;
-						}					
-					});*/
-					
-					//临时测试
-					setTimeout(jsonpCallback,2000,[{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true},{"title":"章节名","bookid":12,"chapterid":12345,"isfree":true}]);
-					isRequesting = true;
-	            };
-	        }
-	    });	
-	});
-	
-	function jsonpCallback(list)
-	{	
-		isRequesting = false;
-		if(!list || list.length==0)
-		{
-			hasDone = true;
-			return;
-		}
-		var buildHtml=function(vo){
-			var htmlNode = $("<li>");
-			
-			$("<a>").attr("href","/exiaoshuo-web/wxChapterSub/index?bookId="+vo.bookid+"&chapterId="+vo.chapterid)
-			.addClass("chapter")
-			.text(vo.title)
-			.appendTo(htmlNode);
-			
-			if(vo.isfree){
-				$("<span>").addClass("fn-right c999").text("免费").appendTo(htmlNode);
-			}
-			
-			return htmlNode;
-		};
-		
-		for(var i=0;i<list.length;i++)
-		{
-			var html = buildHtml(list[i]);
-			$("#container_menu").append(html);
-		}	
-	}
-</script>
+
 <title>${wxBook.name}</title>
 </head>
 <body>
@@ -198,26 +151,32 @@
 		</c:forEach>
 	</ul>
 	
+	<div class="mod_pager">
+		<a href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.prePage }&fm=${fromurl}">上一页</a>&nbsp;&nbsp;
+		<a href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.nextPage }&fm=${fromurl}">下一页</a>&nbsp;&nbsp;
+		<a href="javascript:jumpPage()">跳转指定页</a>
+	</div>
+	
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 <script type="text/javascript" src="<%=path %>/static/js/public.js"></script>
 <script type="text/javascript">
 	function jumpPage() {
-		var jumpPage = $("#jump_page").val();
-		var totalPage = $("#totalPage").val();
-		var pageSize = $("#pageSize").val();
-		var fromurl = $("#fromurl").val();
-		var bookId = $("#bookId").val();
-		if (isNaN(jumpPage) || jumpPage <= 0) {
-			alert("请输入大于0的数字");
-			return;
-		}
-		if (jumpPage > totalPage) {
-			alert("超出最大页数");
-		} else {
-			var pageNo = (jumpPage - 1) * pageSize;
-			window.location.href="<%=path%>/wxChapter/index?bookId="
-					+bookId +"&pageNo="+ pageNo+"&jumpPage="+jumpPage+"&fm="+fromurl;
+		var jumpPage = prompt("输入要跳转的页数，最多${totalRecord}页");
+		if(/\d+/.test(jumpPage))
+		{
+			var totalPage = ${totalRecord};
+			var pageSize = ${pager.pageSize};
+			var fromurl = "${fromurl}";
+			var bookId = ${bookId};
+			
+			if (jumpPage > totalPage) {
+				alert("超出最大页数");
+			} else {
+				var pageNo = (jumpPage - 1) * pageSize;
+				location.href="<%=path%>/wxChapter/index?bookId="
+						+bookId +"&pageNo="+ pageNo+"&jumpPage="+jumpPage+"&fm="+encodeURIComponent(fromurl);
+			}
 		}
 	}
 	$("#zjlb .spage").click(

@@ -6,16 +6,29 @@
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 
 <title>搜索小说</title>
+<style>
+.mod_tag{
+	padding:10px;
+}
+.mod_tag a
+{
+	display:inline-block;
+	padding:3px 12px;
+	border:solid 1px #ccc;
+	border-radius:12px;
+	margin:0 8px 8px 0;
+	font-size:12px;
+	color:#999;
+}
+</style>
 </head>
 
 <body>
-<header class="nav wrap">
- <a class="ico52 back" href="javascript:history.go(-1);"></a>
- 搜索小说<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title" style="background:#f2f2f2;margin-bottom:0">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;搜索小说
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div>
 
-
-<div class="mod_block"></div>
 <form method="post" action="<%=path%>/wxbook/searchlist">
 		<div class="searchbox">
 			<div class="searchd1">
@@ -27,7 +40,6 @@
 			</div>
 		</div>
 </form>
-<div class="mod_block"></div>
 <c:choose>
 <c:when test="${iptsearch!=null&&iptsearch!=''}">
 	<c:choose>
@@ -59,27 +71,14 @@
 	</c:choose>
 </c:when>
 <c:otherwise>
-<div class="mod_title">
-			<h1 class="f17">
-				<i class="home-icon-tit home-icon-tit-b"></i> 热门搜索
-			</h1>
+
+		
+		<div class="mod_block" style="height:40px;line-height:55px;padding-left:10px;color:#999">大家都在搜</div>
+		<div class="mod_tag">
+			<c:forEach items="${wxBooks}" var="books">
+				<a href="<%=path%>/wxbook/detail?id=${books.id}&fm=${fromurl}">${books.name}</a>
+			</c:forEach>
 		</div>
-<div class="mod_content">
-	<ul>
-		<c:forEach items="${wxBooks}" var="books">
-	      <li>
-	        
-	      	<a onclick="addbookrack('${books.id}','0')" href="<%=path%>/wxbook/detail?id=${books.id}&fm=${fromurl}"> 
-	      	<img class="fn-left lazy" src="${books.coverImgs}" dataimg="${books.coverImgs}" alt="${books.name}">
-			<div>
-				<p>${books.name}</p>
-				<p class="intro">${books.getIntr()}</p>
-			</div>
-			</a> 
-	      </li>
-	     </c:forEach>
-	</ul>
-</div>
 </c:otherwise>
 </c:choose>
 
