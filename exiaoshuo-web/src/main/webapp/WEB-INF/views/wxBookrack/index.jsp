@@ -12,7 +12,7 @@
 	<div class="nav-panel bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;我的书架
 		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
-	</div>
+	</div> 
 	
 	<div class="panel-bar">
 		<ul class="btn_area fn-clear">
