@@ -127,8 +127,8 @@
 <input type="hidden" name="bookId" id="bookId" value="${bookId}">
 <input type="hidden" name="fromurl" id="fromurl" value="${fromurl}">
 	<div class="nav-panel bookinfo-title">
-		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;我的书架
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a class="bookinfoback" href="<%=path%>/mynovel/novel?id=${wxBook.id}">«</a>&nbsp;&nbsp;我的书架
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div>
 
 	<ul class="menu" id="container_menu">
@@ -138,13 +138,13 @@
 		<c:forEach items="${wxChapters}" var="chapters">
 			<li><c:if test="${chapters.getChaptertype()==0}">
 			    <a class="chapter" onclick="addbookrack('${wxBook.id}','${chapters.id}')"
-				href="<%=path%>/wxChapterSub/index?bookId=${wxBook.id}&chapterId=${chapters.id}&fm=${fromurl}">
+				href="<%=path%>/myzhangjiecontent/index?bookId=${wxBook.id}&chapterId=${chapters.id}&ch=${fromurl}">
 					${chapters.title} </a>
 					<span class="fn-right c999">免费</span>
 				</c:if>
 				<c:if test="${chapters.getChaptertype()!=0}">
 			    <a class="chapter" onclick="addbookrack('${wxBook.id}','${chapters.id}')"
-				href="<%=path%>/wxChapterSub/vip?bookId=${wxBook.id}&chapterId=${chapters.id}&fm=${fromurl}">
+				href="<%=path%>/myzhangjiecontent/shoufei?bookId=${wxBook.id}&chapterId=${chapters.id}&ch=${fromurl}">
 					${chapters.title} </a>
 					<span class="fn-right" style="color:#c7a116">VIP</span>
 				</c:if>
@@ -153,8 +153,8 @@
 	</ul>
 	
 	<div class="mod_pager">
-		<a href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.prePage }&fm=${fromurl}">上一页</a>&nbsp;&nbsp;
-		<a href="<%=path %>/wxChapter/index?bookId=${bookId}&pageNo=${pager.nextPage }&fm=${fromurl}">下一页</a>&nbsp;&nbsp;
+		<a href="<%=path %>/myzhangjie/index?bookId=${bookId}&pageNo=${pager.prePage }&ch=${fromurl}">上一页</a>&nbsp;&nbsp;
+		<a href="<%=path %>/myzhangjie/index?bookId=${bookId}&pageNo=${pager.nextPage }&ch=${fromurl}">下一页</a>&nbsp;&nbsp;
 		<a href="javascript:jumpPage()">跳转指定页</a>
 	</div>
 	
@@ -176,7 +176,7 @@
 			} else {
 				var pageNo = (jumpPage - 1) * pageSize;
 				location.href="<%=path%>/wxChapter/index?bookId="
-						+bookId +"&pageNo="+ pageNo+"&jumpPage="+jumpPage+"&fm="+encodeURIComponent(fromurl);
+						+bookId +"&pageNo="+ pageNo+"&pageto="+jumpPage+"&ch="+encodeURIComponent(fromurl);
 			}
 		}
 	}

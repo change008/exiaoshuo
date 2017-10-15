@@ -22,7 +22,7 @@ import com.tiexue.mcp.core.service.IWxPresentService;
 import com.tiexue.mcp.core.service.IWxUserService;
 
 @Controller
-@RequestMapping("wxPresent")
+@RequestMapping("mylingbi")
 public class WxPresentController {
 	// 打印日志
 	private Logger logger = Logger.getLogger(WxPayController.class);
@@ -45,7 +45,7 @@ public class WxPresentController {
 		if(userIdStr!=null&&!userIdStr.isEmpty()){
 			userId=Integer.parseInt(userIdStr);
 		}
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		String startDt= DateUtil.getDays("yyyy-MM-dd");
 		Date dt=new Date();
 		dt=DateUtil.AddDays(dt, 1);
@@ -58,10 +58,10 @@ public class WxPresentController {
 		request.setAttribute("isget", isget);
 		request.setAttribute("userId", userId);
 		request.setAttribute("fromurl", fm);
-		return "wxPresent/index";
+		return "mylingbi/index";
 	}
 	
-	@RequestMapping("getCoin")
+	@RequestMapping("lingqu")
 	@ResponseBody
 	public void getCoin(HttpServletRequest request,HttpServletResponse response,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token){

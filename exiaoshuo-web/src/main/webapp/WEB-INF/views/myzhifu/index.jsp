@@ -26,7 +26,7 @@
 <body>
 <div class="nav-panel bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;充值记录
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div> 
 <div class="mod_tab_content shelf">
 <table cellpadding="0" width="100%">
@@ -58,20 +58,20 @@
 </div>
 <ul id="pager" class="pager">
       <li class="four"><a class="btn white start"
-			href="<%=path %>/wxPay/index?pageNo=0&pageSize=${pager.pageSize }&fm=${fromurl}">第一页</a></li>
+			href="<%=path %>/myzhifu/index?pageNo=0&pageSize=${pager.pageSize }&ch=${fromurl}">第一页</a></li>
 		<li class="four"><c:if test="${pager.prePage>=0 }">
-				<a class="btn white prev" href="<%=path %>/wxPay/index?pageNo=${pager.prePage }&pageSize=${pager.pageSize }&fm=${fromurl}">上一页</a>
+				<a class="btn white prev" href="<%=path %>/myzhifu/index?pageNo=${pager.prePage }&pageSize=${pager.pageSize }&ch=${fromurl}">上一页</a>
 			</c:if> <c:if test="${pager.prePage<0 }">
 				<a class="btn white next" href="#" disabled="disabled">上一页</a>
 			</c:if></li>
 		<li class="four"><c:if test="${pager.nextPage>0 }">
 				<a class="btn white prev"
-					href="<%=path %>/wxPay/index?pageNo=${pager.nextPage }&pageSize=${pager.pageSize }&fm=${fromurl}">下一页</a>
+					href="<%=path %>/myzhifu/index?pageNo=${pager.nextPage }&pageSize=${pager.pageSize }&ch=${fromurl}">下一页</a>
 			</c:if> <c:if test="${pager.nextPage<=0 }">
 				<a class="btn white next" href="#" disabled="disabled">上一页</a>
 			</c:if></li>
 		<li class="four"><a class="btn white end"
-			href="<%=path %>/wxPay/index?pageNo=${pager.lastPageNo }&pageSize=${pager.pageSize }&fm=${fromurl}">最末页</a></li>
+			href="<%=path %>/myzhifu/index?pageNo=${pager.lastPageNo }&pageSize=${pager.pageSize }&ch=${fromurl}">最末页</a></li>
 </ul>
 <%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>

@@ -33,7 +33,7 @@ import com.tiexue.mcp.core.service.IWxChapterService;
 import com.tiexue.mcp.core.service.IWxUserService;
 
 @Controller
-@RequestMapping("wxBookrack")
+@RequestMapping("myshujia")
 public class WxBookrackController {
 	// 日志
 	private Logger logger = Logger.getLogger(WxBookrackController.class);
@@ -149,7 +149,7 @@ public class WxBookrackController {
 	 * @param userId
 	 * @return
 	 */
-	@RequestMapping("list")
+	@RequestMapping("index")
 	public String getBookrackList(HttpServletRequest request,HttpServletResponse response,
 			@CookieValue(value = "defaultbookrack", required = true, defaultValue = "") String rackCookie,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token
@@ -161,7 +161,7 @@ public class WxBookrackController {
 				userIdStr = pageUser.getId();
 			}
 		}
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		//把小说来源公共号信息放到cookie中
 		if((from_name==null||from_name.isEmpty())&&fm!=null&&!fm.isEmpty()){
 			CookieUtils.addcookie("from_name", 1*365*24*60*60, response,fm);
@@ -244,7 +244,7 @@ public class WxBookrackController {
 			logger.error("获取书架信息失败:" + e.getMessage());
 		}
 
-		return "/wxBookrack/index";
+		return "/myshujia/index";
 
 	}
 	

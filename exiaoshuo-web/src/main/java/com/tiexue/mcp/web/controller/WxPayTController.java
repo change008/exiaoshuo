@@ -44,7 +44,7 @@ import weixin.popular.util.StreamUtils;
 import weixin.popular.util.XMLConverUtil;
 
 @Controller
-@RequestMapping("/wxPayT")
+@RequestMapping("/myzhifu1")
 public class WxPayTController {
 	// 打印日志
 	private Logger logger = Logger.getLogger(WxPayController.class);
@@ -88,7 +88,7 @@ public class WxPayTController {
 			request.setAttribute("userId", userId);
 		}
 
-		return "/wxPayT/index";
+		return "/myzhifu1/index";
 	}
 
 	/**
@@ -113,11 +113,11 @@ public class WxPayTController {
 			int userId = Integer.parseInt(userIdStr);
 			WxUser userModel = userSer.selectByPrimaryKey(userId);
 			if(userModel==null)
-				return "redirect:/wxUser/login";
+				return "redirect:/myuser/login";
 			WxUserDto userDto = userDtoFill(userModel);
 			request.setAttribute("user", userDto);
 		}else{
-				return "redirect:/wxUser/login";
+				return "redirect:/myuser/login";
 		}
 		// todo:如果充值来源于阅读中,我们需要将阅读信息保存到cookie中
 		String bookid = request.getParameter("bookid");
@@ -130,7 +130,7 @@ public class WxPayTController {
 			_refCookie.setMaxAge(15*60); // 设置Cookie的过期之前的时间，单位为秒
 			response.addCookie(_refCookie); // 通过response的addCookie()方法将此Cookie对象保存到客户端的Cookie中
 		}
-		return "/wxPayT/pay";
+		return "/muzhifu1/pay";
 	}
 
 	/**
@@ -156,9 +156,9 @@ public class WxPayTController {
 			int userId = Integer.parseInt(userIdStr);
 			user = userSer.selectByPrimaryKey(userId);
 			if (user == null)
-				return "redirect:/wxUser/login";
+				return "redirect:/myuser/login";
 		} else {
-			return "redirect:/wxUser/login";
+			return "redirect:/myuser/login";
 		}
 		// 先将逻辑全写在controller中,写完后拆分到对应service中
 		String moneyStr = request.getParameter("money");
@@ -195,7 +195,7 @@ public class WxPayTController {
 		// 将json 传到jsp 页面
 		request.setAttribute("json", json);
 		// 转到支付发起js页面
-		return "/wxPayT/ipay_now";
+		return "/myzhifu1/ipay_now";
 	}
 
 	// 重复通知过滤
@@ -205,7 +205,7 @@ public class WxPayTController {
 	 * 微信支付成功,回调此接口
 	 * 
 	 */
-	@RequestMapping("wxpaycallback")
+	@RequestMapping("succallback")
 	public void wxPayCallback(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 获取请求数据
 		String xmlData = StreamUtils.copyToString(request.getInputStream(), Charset.forName("utf-8"));
@@ -252,7 +252,7 @@ public class WxPayTController {
 				logger.error("pay _refpay:"+ref);
 				return "redirect:" + ref;
 			}
-			return "redirect:/wxbook/list";
+			return "redirect:/mynovel/index";
 		} catch (Exception e) {
 			logger.error("支付成功后跳转报错：" + e.getMessage());
 			e.printStackTrace();
@@ -266,9 +266,9 @@ public class WxPayTController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/errorpay")
+	@RequestMapping("/zhifuerror")
 	public String error(HttpServletRequest request) {
-		return "/wxPayT/errorpay";
+		return "/myzhifu1/zhifuerror";
 	}
 
 	private List<WxPayDto> wxPayFill(List<WxPay> wxpays) {

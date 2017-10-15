@@ -11,16 +11,16 @@
 
 <body>
 <div class="nav-panel bookinfo-title">
-		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;签到送币
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;登录领币
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div> 
 <div class="wrap" >
 		<div class="mod_content c1 gray">
 	<ul class="gray small">
-			<li style="color:red;font-size:20px;">温馨提示：
+			<li style="color:red;font-size:20px;">提示：
 			</li>
-		    <li>用户每天可领取一次小说币</li>
-		    <li>每次可领取15小说币</li>
+		    <li>用户每日可以领取一次小说币</li>
+		    <li>每次可领取一定数量小说币</li>
 		</ul>
 		
 	</div>
@@ -37,10 +37,10 @@
 	</c:if>
 	<c:if test="${userId<=0}">
 	 <p class="panel margin-top-10" style="text-align: center;color: red;font-size: 16px;">请先登录再领小说币！</p>
-	  <a class="btn block" href="<%=path%>/wxUser/login?fm=${fromurl}">登录</a> 
+	  <a class="btn block" href="<%=path%>/myuser/login?ch=${fromurl}">登录</a> 
 	</c:if>
-	<a class="btn block" href="<%=path%>/wxUser/content?fm=${fromurl}">个人中心</a> 
-	<a class="btn block" href="<%=path%>/?fm=${fromurl}">返回看书</a> 
+	<a class="btn block" href="<%=path%>/myuser/content?ch=${fromurl}">个人中心</a> 
+	<a class="btn block" href="<%=path%>/?ch=${fromurl}">返回看书</a> 
 	
 	 </div>
 <%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
@@ -48,7 +48,7 @@
 <script type="text/javascript">
 function getcoin(){
 	$.ajax({
-		url:"<%=path%>/wxPresent/getCoin",
+		url:"<%=path%>/mylingbi/lingqu",
 		type:"post",
 		async:false,
 		dataType:'json',  

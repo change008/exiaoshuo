@@ -35,7 +35,7 @@
 <div class="panel">
 	<div class="bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1);">«</a>&nbsp;&nbsp;${wxBook.getName()}</a>
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div>
 	<div class="fn-clear">
         <img class="cover fn-left lazy" style="margin-top:0px;" src="${wxBook.getCoverImgs()}" dataimg="${wxBook.getCoverImgs()}" width="80px" height="112px">
@@ -52,10 +52,10 @@
 	<ul class="btn_area fn-clear">
 		<li>
 		<c:if test="${bookrack.chapterid>0}">
-		<a class="btn block start_read" href="<%=path %>/wxChapterSub/index?bookId=${wxBook.getId()}&chapterId=${bookrack.chapterid}&fm=${fromurl}">继续阅读</a>
+		<a class="btn block start_read" href="<%=path %>/myzhangjiecontent/index?bookId=${wxBook.getId()}&chapterId=${bookrack.chapterid}&ch=${fromurl}">继续阅读</a>
 		</c:if>
 		<c:if test="${bookrack==null||bookrack.chapterid<=0}">
-		<a class="btn block start_read" href="<%=path %>/wxChapterSub/defualt?bookId=${wxBook.getId()}&fm=${fromurl}">免费阅读</a>
+		<a class="btn block start_read" href="<%=path %>/myzhangjiecontent/moren?bookId=${wxBook.getId()}&ch=${fromurl}">免费阅读</a>
 		</c:if>
 		</li>
 		<li>
@@ -69,7 +69,7 @@
 		</c:if>
 		
 		</li>
-		<li><a href="<%=path %>/wxChapter/index?bookId=${wxBook.getId()}&fm=${fromurl}" class="btn block white">章节目录</a></li>
+		<li><a href="<%=path %>/myzhangjie/index?bookId=${wxBook.getId()}&ch=${fromurl}" class="btn block white">章节目录</a></li>
 	</ul>
 </div>
 
@@ -104,7 +104,7 @@ $(function(){
 		}else{
 			var postData={'bookId':bookid,'bookName':bookname}
 			$.ajax({
-				url:"<%=path%>/wxBookrack/addBookrack",
+				url:"<%=path%>/myshujia/addBookrack",
 				data:postData,
 				type:"post",
 				dataType:"json",

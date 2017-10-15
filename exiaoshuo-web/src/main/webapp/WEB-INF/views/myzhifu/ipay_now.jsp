@@ -20,7 +20,7 @@
 			} else {
 				//支付失败
 				//alert(res.err_msg);
-				window.location.href="errorpay/"; 
+				window.location.href="zhifuerror/"; 
 			}
 		});
 	}

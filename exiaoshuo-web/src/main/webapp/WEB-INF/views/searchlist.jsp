@@ -5,7 +5,7 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 
-<title>搜索小说</title>
+<title>搜索</title>
 <style>
 .mod_tag{
 	padding:10px;

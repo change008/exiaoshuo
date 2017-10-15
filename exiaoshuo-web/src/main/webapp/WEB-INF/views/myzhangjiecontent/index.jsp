@@ -31,28 +31,28 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 			     <c:if test="${wxChapterSub.preType!=0}">
 			      <a class="chapter_prev btn white block"
 						data-cid="${wxChapterSub.preId}"
-						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&fm=${fromurl}">上一章节</a>
+						href="<%=path %>/myzhangjiecontent/shoufei?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&ch=${fromurl}">上一章节</a>
 				 </c:if>
 				<c:if test="${wxChapterSub.preType==0}">
 			      <a class="chapter_prev btn white block"
 						data-cid="${wxChapterSub.preId}"
-						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&fm=${fromurl}">上一章节</a>
+						href="<%=path %>/myzhangjiecontent/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&ch=${fromurl}">上一章节</a>
 				 </c:if>
 			</c:if> <c:if test="${wxChapterSub.preId<=0 }">
 					<a class="chapter_prev btn white block" href="#"
 						disabled="disabled">上一章节</a>
 				</c:if></li>
 			<li class="mulu"><a class="btn white block" style="border:none"
-				href="<%=path %>/wxChapter/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&fm=${fromurl}">目录</a></li>
+				href="<%=path %>/myzhangjie/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&ch=${fromurl}">目录</a></li>
 			<li class="pn">
 			<c:if test="${wxChapterSub.nextId>0 }">
 			     <c:if test="${wxChapterSub.nextType!=0}">
 			      <a  onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')"  class="chapter_next btn block" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下一章节</a>
+						href="<%=path %>/myzhangjiecontent/shoufei?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&ch=${fromurl}">下一章节</a>
 				 </c:if>
 				 <c:if test="${wxChapterSub.nextType==0}">
 			       <a  onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')"  class="chapter_next btn block" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下一章节</a>
+						href="<%=path %>/myzhangjiecontent/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&ch=${fromurl}">下一章节</a>
 				 </c:if>
 			</c:if> 
 				<c:if test="${wxChapterSub.nextId<=0 }">
@@ -78,12 +78,12 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 		</div>
 		<div class="tool_top" style="display: none;">
 			<ul>
-				<li><a href="<%=path%>/wxbook/detail?id=${wxChapterSub.bookId}&fm=${fromurl}"><i
+				<li><a href="<%=path%>/mynovel/novel?id=${wxChapterSub.bookId}&ch=${fromurl}"><i
 						class="ico40 back back2"></i>书页</a></li>
 				<li class="center-li"><a class=""
-					href="<%=path %>/wxChapter/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&fm=${fromurl}">目录</a></li>
+					href="<%=path %>/myzhangjie/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&ch=${fromurl}">目录</a></li>
 				<li><a
-					href="<%=path%>/wxBookrack/list?fm=${fromurl}">书架
+					href="<%=path%>/myshujia/index?fm=${fromurl}">书架
 						<i class="ico40 bookshelf"></i>
 				</a></li>
 			</ul>
@@ -95,14 +95,14 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 			     <c:if test="${wxChapterSub.preType==0}">
 			        <a class="chapter_prev"
 						data-cid="${wxChapterSub.preId}"
-						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}">
+						href="<%=path %>/myzhangjiecontent/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}">
 						<i class="ico40 fastprev"></i>上章
 					</a>
 				 </c:if>
 				<c:if test="${wxChapterSub.preType!=0}">
 			        <a class="chapter_prev"
 						data-cid="${wxChapterSub.preId}"
-						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}">
+						href="<%=path %>/myzhangjiecontent/shoufei?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}">
 						<i class="ico40 fastprev"></i>上章
 					</a>
 				 </c:if>
@@ -119,12 +119,12 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 			<c:if test="${wxChapterSub.nextId>0 }">
 			     <c:if test="${wxChapterSub.nextType==0}">
 			       <a class="chapter_next" onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/wxChapterSub/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下章 <i
+						href="<%=path %>/myzhangjiecontent/index?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&ch=${fromurl}">下章 <i
 						class="ico40 fastnext"></i></a>
 				 </c:if>
 				 <c:if test="${wxChapterSub.nextType!=0}">
 			       <a class="chapter_next" onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/wxChapterSub/vip?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&fm=${fromurl}">下章 <i
+						href="<%=path %>/myzhangjiecontent/shoufei?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&ch=${fromurl}">下章 <i
 						class="ico40 fastnext"></i></a>
 				 </c:if>
 				</c:if> <c:if test="${wxChapterSub.nextId<=0 }">
@@ -173,7 +173,7 @@ $("#btn-addbookrack").click(function(){
 	}else{
 		var postData={'bookId':bookid,'bookName':bookname,'chapterId':chapterid,'chapterName':chaptername}
 		$.ajax({
-			url:"<%=path%>/wxBookrack/updateBookrack",
+			url:"<%=path%>/myshujia/updateBookrack",
 			data:postData,
 			type:"post",
 			dataType:"json",

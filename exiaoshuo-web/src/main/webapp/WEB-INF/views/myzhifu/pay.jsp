@@ -13,49 +13,43 @@
 <input type="hidden" id="chapterid" name="chapterid" value="${chapterid }">
 <input type="hidden" id="fromurl" name="fromurl" value="${fromurl }">
 	<div class="nav-panel bookinfo-title">
-		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;充值小说币
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a class="bookinfoback" href="<%=path%>/mynovel/novel?id=${wxBook.id}">«</a>&nbsp;&nbsp;充值阅币
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div>
 	<div class="mod_content panel c1  "
 		style="padding-top: 8px; padding-bottom: 2px;">
 		<ul class="gray">
 			<li>充值账号：<label class="orange">${user.name }</label><br>
-				用户余额：<label class="orange">${user.coin}</label>小说币
+				用户余额：<label class="orange">${user.coin}</label>阅币
 			</li>
 		</ul>
 	</div>
 <div class="mod_block"></div>
 	<ul class="pay_money moneylist margin-top-10">
 		<li><span data-money="3000" data-premium="300" data-type="1">
-		    <span>3000+300小说币</span>
-			<dl>30元</dl>
-			<label>送3元(10%)</label>
+		    <span>3000+300阅币</span>
+			<dl>30元(送3元)</dl>
 			</span></li>
 		<li ><span style="border: 1px solid #ff6600;" data-money="5000" data-premium="900" data-type="1">
 		<div class="top_up_send">热</div>
-			<span>5000+900小说币</span>
-			<dl>50元</dl>
-			<label>送9元(18%)</label>
+			<span>5000+900阅币</span>
+			<dl>50元(送9元)</dl>
 			</span></li>
 		<li><span data-money="10000" data-premium="2000" data-type="1">
-			<span>10000+2000小说币</span>
-			<dl>100元</dl>
-			<label>送20元(20%)</label>
+			<span>10000+2000阅币</span>
+			<dl>100元(送20元)</dl>
 			</span></li>
 		<li><span data-money="20000" data-premium="5000" data-type="1">
-			<span>20000+5000小说币</span>
-			<dl>200元</dl>
-			<label>送50元(25%)</label>
+			<span>20000+5000阅币</span>
+			<dl>200元(送50元)</dl>
 		</span></li>
 		<li><span data-money="50000" data-premium="15000" data-type="1">
-			<span>50000+15000小说币</span>
-			<dl>500元</dl>
-			<label>送150元(30%)</label>
+			<span>50000+15000阅币</span>
+			<dl>500元(送150元)</dl>
 		</span></li>
 		<li><span data-money="100000" data-premium="35000" data-type="1">
-			<span>100000+35000小说币</span>
-			<dl>1000元</dl>
-			<label>送350元(35%)</label>
+			<span>100000+35000阅币</span>
+			<dl>1000元(送350元)</dl>
 		</span></li>
 	</ul>
 	
@@ -72,23 +66,8 @@
 	</ul> -->
 	
 	<div class="mod_content c1 gray">
-	<ul class="gray small">
-			<!-- <li style="color:red;font-size:20px;">首充优惠活动：
-			</li>
-			<li>用户第一次充值可获得小说币<span style="color:red;font-size:16px;">加倍</span>的奖励。即:充值30元即可获得6300小说币。以此类推。</li>
-		</ul> -->
-		<ul class="gray small">
-			<li class="orange">温馨提示：
-			</li>
-<!-- 			<li>包年只能直接购买，不可以用小说币兑换。</li>
-			<li>包年时间是365天，半年是180天，重复购买时间会累加。</li> -->
-			<li>充值阅读权限仅限本站使用
-			  <!--  测试充值 -->
-				<span class="testPay">&nbsp;&nbsp;<span data-money="1" data-premium="0" data-type="1">
-				</span> 
-		   </li>
-			<li>充值小说币为虚拟物品，不支持退款！</li>
-		</ul>
+	<span class="testPay">&nbsp;&nbsp;<span data-money="10" data-premium="0" data-type="1">
+	</span> 
 	</div>
  
 	<script>

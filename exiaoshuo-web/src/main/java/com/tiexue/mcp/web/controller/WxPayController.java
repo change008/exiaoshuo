@@ -46,7 +46,7 @@ import weixin.popular.util.StreamUtils;
 import weixin.popular.util.XMLConverUtil;
 
 @Controller
-@RequestMapping("/wxPay")
+@RequestMapping("/myzhifu")
 public class WxPayController {
 	// 打印日志
 	private Logger logger = Logger.getLogger(WxPayController.class);
@@ -69,7 +69,7 @@ public class WxPayController {
 		//userIdStr = "123123";
 		String pageNoStr = request.getParameter("pageNo");
 		String pageSizeStr = request.getParameter("pageSize");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		if (userIdStr != null && !userIdStr.isEmpty()) {
 			int userId = Integer.parseInt(userIdStr);
 			int pageNo = 0;
@@ -105,7 +105,7 @@ public class WxPayController {
 			request.setAttribute("fromurl", fm);
 		}
 
-		return "/wxPay/index";
+		return "/myzhifu/index";
 	}
 
 	/**
@@ -130,11 +130,11 @@ public class WxPayController {
 			int userId = Integer.parseInt(userIdStr);
 			WxUser userModel = userSer.selectByPrimaryKey(userId);
 			if(userModel==null)
-				return "redirect:/wxUser/login";
+				return "redirect:/myuser/login";
 			WxUserDto userDto = userDtoFill(userModel);
 			request.setAttribute("user", userDto);
 		}else{
-				return "redirect:/wxUser/login";
+				return "redirect:/myuser/login";
 		}
 		// todo:如果充值来源于阅读中,我们需要将阅读信息保存到cookie中
 		String bookid = request.getParameter("bookid");
@@ -154,7 +154,7 @@ public class WxPayController {
 			_refCookie.setMaxAge(50); // 设置Cookie的过期之前的时间，单位为秒
 			response.addCookie(_refCookie); // 通过response的addCookie()方法将此Cookie对象保存到客户端的Cookie中
 		}
-		return "/wxPay/pay";
+		return "/myzhifu/pay";
 	}
 
 	/**
@@ -180,9 +180,9 @@ public class WxPayController {
 			int userId = Integer.parseInt(userIdStr);
 			user = userSer.selectByPrimaryKey(userId);
 			if (user == null)
-				return "redirect:/wxUser/login";
+				return "redirect:/myuser/login";
 		} else {
-			return "redirect:/wxUser/login";
+			return "redirect:/myuser/login";
 		}
 		// 先将逻辑全写在controller中,写完后拆分到对应service中
 		String moneyStr = request.getParameter("money");
@@ -221,7 +221,7 @@ public class WxPayController {
 		request.setAttribute("json", json);
 		request.setAttribute("fromurl", fm);
 		// 转到支付发起js页面
-		return "/wxPay/ipay_now";
+		return "/myzhifu/ipay_now";
 	}
 
 	// 重复通知过滤
@@ -231,7 +231,7 @@ public class WxPayController {
 	 * 微信支付成功,回调此接口
 	 * 
 	 */
-	@RequestMapping("wxpaycallback")
+	@RequestMapping("succallback")
 	public void wxPayCallback(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 获取请求数据
 		String xmlData = StreamUtils.copyToString(request.getInputStream(), Charset.forName("utf-8"));
@@ -281,7 +281,7 @@ public class WxPayController {
 			logger.error("fromurl:"+fm);
 			attr.addAttribute("fm", fm);
 			// todo:在这里处理支付成功的逻辑,跳转到原来阅读地址,或者到首页等
-			if (ref != ""&&(ref.contains("wxChapterSub")||ref.contains("wxUser")||ref.contains("wxChapter"))) {
+			if (ref != ""&&(ref.contains("myzhangjiecontent")||ref.contains("myuser")||ref.contains("myzhangjie"))) {
 				logger.error("pay _refpay:"+ref);
 				Cookie _refCookie = new Cookie("_refpay", ""); // 创建一个Cookie对象，并将用户名保存到Cookie对象中
 				_refCookie.setMaxAge(5*60); // 设置Cookie的过期之前的时间，单位为秒
@@ -290,7 +290,7 @@ public class WxPayController {
 				return "redirect:" + ref;
 			}
 			logger.error("pay _refpay:"+ref);
-			return "redirect:/wxbook/list";
+			return "redirect:/mynovel/index";
 		} catch (Exception e) {
 			logger.error("支付成功后跳转报错：" + e.getMessage());
 			e.printStackTrace();
@@ -304,9 +304,9 @@ public class WxPayController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/errorpay")
+	@RequestMapping("/zhifuerror")
 	public String error(HttpServletRequest request) {
-		return "/wxPay/errorpay";
+		return "/myzhifu/zhifuerror";
 	}
 
 	private List<WxPayDto> wxPayFill(List<WxPay> wxpays) {

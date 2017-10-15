@@ -20,7 +20,7 @@ import com.tiexue.mcp.core.service.IWxBookService;
 import com.tiexue.mcp.core.service.IWxChapterService;
 
 @Controller
-@RequestMapping("wxChapter")
+@RequestMapping("myzhangjie")
 public class WxChapterController {
 	private static Logger logger=Logger.getLogger(WxChapterController.class);
 	int pageSize=20;
@@ -31,13 +31,13 @@ public class WxChapterController {
 	@Resource
 	IWxBookService wxBook;
 	//获取章节列表信息
-	@RequestMapping("/index")
+	@RequestMapping("/list")
 	public String getList(HttpServletRequest request) {
 		
 		String bookIdStr = request.getParameter("bookId");
 		String pageNoStr = request.getParameter("pageNo");
-		String jumpPage = request.getParameter("jumpPage");
-		String fm = request.getParameter("fm");
+		String jumpPage = request.getParameter("pageto");
+		String fm = request.getParameter("ch");
 		if (bookIdStr != null && !bookIdStr.isEmpty()) {
 			int bookId = 0;
 			bookId = Integer.parseInt(bookIdStr);
@@ -58,7 +58,7 @@ public class WxChapterController {
 		    request.setAttribute("chapNaviDtos", chapNaviDtos);
 		    request.setAttribute("wxChapters",wxChapterDtoFill(wxChapters,pageNo));
 			request.setAttribute("pager", pagerModel);
-			request.setAttribute("jumpPage", jumpPage);
+			request.setAttribute("pageto", jumpPage);
 			int count=totalRecord/pageSize;
 			if(totalRecord%pageSize>0)
 				count++;
@@ -66,7 +66,7 @@ public class WxChapterController {
 			request.setAttribute("fromurl", fm);
 		}
 
-		return "/wxChapter/index";
+		return "/myzhangjie/index";
 	}
 	
 	private List<WxChapterDto> wxChapterDtoFill(List<WxChapter> wxChapters,int pageNo){
@@ -98,7 +98,7 @@ public class WxChapterController {
 		if(pageSize>=totalRecord){
 			WxChapterNaviDto chapNavi=new WxChapterNaviDto();
 			chapNavi.setName("1-"+pageSize+"章");
-			chapNavi.setUrl("/wxChapter/index?bookId="+bookId+"&pageNo="+pageNo+"&fm="+fm);
+			chapNavi.setUrl("/myzhangjie/list?bookId="+bookId+"&pageNo="+pageNo+"&ch="+fm);
 			chapNavi.setOrder(0);
 			chapNavi.setIsActive(true);
 			resultData.add(chapNavi);
@@ -112,7 +112,7 @@ public class WxChapterController {
 				int lastPage=(pageSize*(i+1))>totalRecord?totalRecord:(pageSize*(i+1));
 				WxChapterNaviDto chapNavi=new WxChapterNaviDto();
 				chapNavi.setName(prePage+"-"+lastPage+"章");
-				chapNavi.setUrl("/wxChapter/index?bookId="+bookId+"&pageNo="+(pageSize*i)+"&fm="+fm);
+				chapNavi.setUrl("/myzhangjie/list?bookId="+bookId+"&pageNo="+(pageSize*i)+"&ch="+fm);
 				chapNavi.setOrder(i);
 				chapNavi.setIsActive((pageSize*i)==pageNo?true:false);
 				resultData.add(chapNavi);

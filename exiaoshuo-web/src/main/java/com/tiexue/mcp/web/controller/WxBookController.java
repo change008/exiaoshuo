@@ -30,7 +30,7 @@ import com.tiexue.mcp.core.service.IWxChapterService;
 import com.tiexue.mcp.core.service.IWxUserService;
 
 @Controller
-@RequestMapping("/wxbook")
+@RequestMapping("/mynovel")
 public class WxBookController {
 	// 日志
 	private Logger logger = Logger.getLogger(WxBookController.class);
@@ -52,14 +52,14 @@ public class WxBookController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/list")
+	@RequestMapping("/index")
 	public String list(HttpServletRequest request,HttpServletResponse response
 			,@CookieValue(value ="defaultbookrack",required = true, defaultValue = "")String rackCookie
 			,@CookieValue(value ="wx_gzh_token",required = true, defaultValue = "")String wx_gzh_token
 			,@CookieValue(value ="from_name",required = true, defaultValue = "")String from_name) {
 		String userIdStr="";
 		try {
-			String fm = request.getParameter("fm");
+			String fm = request.getParameter("ch");
 			logger.error("获取 wx_gzh_token："+wx_gzh_token);
 			if(wx_gzh_token!=""){
 				PageUserDto pageUser= userSer.getPageUserDto(wx_gzh_token);
@@ -99,11 +99,11 @@ public class WxBookController {
 	}
 
 	
-	@RequestMapping("/detail")
+	@RequestMapping("/novel")
 	public String detailInfo(HttpServletRequest request,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token) {
 		String userIdStr = "";
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		if (wx_gzh_token != "") {
 			PageUserDto pageUser = userSer.getPageUserDto(wx_gzh_token);
 			if (pageUser != null) {
@@ -144,14 +144,14 @@ public class WxBookController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/searchlist")
+	@RequestMapping("/ssindex")
 	public String searchlist(HttpServletRequest request,HttpServletResponse response
 			,@CookieValue(value ="defaultbookrack",required = true, defaultValue = "")String rackCookie
 			,@CookieValue(value ="wx_gzh_token",required = true, defaultValue = "")String wx_gzh_token
 			,@CookieValue(value ="from_name",required = true, defaultValue = "")String from_name) {
 		String userIdStr="";
 		try {
-			String fm = request.getParameter("fm");
+			String fm = request.getParameter("ch");
 			String iptsearch=request.getParameter("iptsearch");
 			String status = EnumType.BookStatus_Finish + "," + EnumType.BookStatus_Update;
 			String strWhere=" Status in ("+status+")"+" ";

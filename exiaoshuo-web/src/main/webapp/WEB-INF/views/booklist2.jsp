@@ -5,12 +5,12 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 
-<title>首页123</title>
+<title>ss</title>
 </head>
 
 <body>
 	<header class="wrap">
-		<a id="logo" href="<%=path%>/?fm=${fromurl}" class="logo" title=""></a>
+		<a id="logo" href="<%=path%>/?ch=${fromurl}" class="logo" title=""></a>
 		<ul>
 			<!-- <li><a href="/book/search.html">搜索</a></li>
 		<li><a href="/top/tuijian.html">排行</a></li>

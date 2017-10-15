@@ -87,12 +87,12 @@ function appendNovel()
 	<a id="logo" href="/" class="logo" title=""><img src="<%=path%>/static/image/logo2.png" width="170"/></a>
 </div>	
 
-<div class="mod_tosearch"> <a href="<%=path%>/wxbook/searchlist" class="mod_tosearchinput">作者名 / 书名 / 关键字</a> </div>
+<div class="mod_tosearch"> <a href="<%=path%>/mynovel/ssindex" class="mod_tosearchinput">作者名 / 书名 / 关键字</a> </div>
 
 <div class="mod_fastico">
-	<a href="<%=path%>/wxBookrack/list?fm=${fromurl}"><img src="<%=path%>/static/image/ico1.png" /></a>
-		<a href="<%=path%>/wxPay/pay?fm=${fromurl}"><img src="<%=path%>/static/image/ico2.png"/></a>
-		<a href="<%=path%>/wxUser/content/?fm=${fromurl}"><img src="<%=path%>/static/image/ico3.png"/></a>
+	<a href="<%=path%>/myshujia/index?ch=${fromurl}"><img src="<%=path%>/static/image/ico1.png" /></a>
+		<a href="<%=path%>/myzhifu/pay?ch=${fromurl}"><img src="<%=path%>/static/image/ico2.png"/></a>
+		<a href="<%=path%>/myuser/model/?ch=${fromurl}"><img src="<%=path%>/static/image/ico3.png"/></a>
 </div>
 <div class="mod_block"></div>
 <div class="mod_title c0">

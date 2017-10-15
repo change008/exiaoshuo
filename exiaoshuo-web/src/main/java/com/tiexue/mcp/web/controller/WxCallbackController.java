@@ -21,7 +21,7 @@ import com.tiexue.mcp.core.entity.WxConstants;
 import com.tiexue.mcp.core.service.IWxCallbackService;
 
 @Controller
-@RequestMapping("wxcallback")
+@RequestMapping("mycallback")
 public class WxCallbackController {
 	// 日志
 	private Logger logger = Logger.getLogger(WxCallbackController.class);
@@ -29,7 +29,7 @@ public class WxCallbackController {
 	@Resource
 	IWxCallbackService wxCallbackService;
 
-	@RequestMapping("check")
+	@RequestMapping("weichatcheck")
 	public void check(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String signature = request.getParameter("signature");

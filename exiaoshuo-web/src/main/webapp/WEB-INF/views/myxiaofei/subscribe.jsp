@@ -10,8 +10,8 @@
 
 <body>
 <div class="nav-panel bookinfo-title">
-		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;订阅章节
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a class="bookinfoback" href="<%=path%>/mynovel/novel?id=${wxBook.id}">«</a>&nbsp;&nbsp;订阅章节
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div>
 <div class="mod_content pb">
 <input type="hidden" id="userId" name="userId" value="${user.id}">
@@ -25,7 +25,7 @@
             <li class="gray">账户：${user.name}</li>
             <li class="gray"><input id="autopay" name="autopay" type="checkbox" value="" readonly="readonly"  checked="checked" >自动购买，下一章不再提醒。</li>
             <li>
-            <c:if test="${user.coin<chapter.pirce }"><a class="btn block" href="<%=path%>/wxPay/pay?bookid=${chapter.bookid}&chapterid=${chapter.id}&fm=${fromurl}"><font color="white">余额不足？花点小钱充值»</font></a></c:if>
+            <c:if test="${user.coin<chapter.pirce }"><a class="btn block" href="<%=path%>/myzhifu/pay?bookid=${chapter.bookid}&chapterid=${chapter.id}&ch=${fromurl}"><font color="white">余额不足？花点小钱充值»</font></a></c:if>
             <c:if test="${user.coin>=chapter.pirce }"><a id="consume_id" class="btn block" href="#" onclick="onconsume()"><font color="white">订阅</font></a></c:if>
             </li>
                                 
@@ -58,7 +58,7 @@
 			dataType:"json",
 			success:function(res){
 				if(res.ok){
-				window.location.href ='<%=path%>/wxChapterSub/index?bookId='+bookId+'&chapterId='+chapterId+'&userId='+userId;
+				window.location.href ='<%=path%>/myzhangjiecontent/index?bookId='+bookId+'&chapterId='+chapterId+'&userId='+userId;
 				}
 				else{
 					alert("消费失败");

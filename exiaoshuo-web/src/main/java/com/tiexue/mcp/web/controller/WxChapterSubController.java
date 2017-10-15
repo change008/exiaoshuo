@@ -37,7 +37,7 @@ import com.tiexue.mcp.core.service.IWxUserService;
 
 
 @Controller
-@RequestMapping("wxChapterSub")
+@RequestMapping("myzhangjiecontent")
 public class WxChapterSubController {
 	private static Logger logger=Logger.getLogger(WxChapterController.class);
 	int pageSize=20;
@@ -79,7 +79,7 @@ public class WxChapterSubController {
 		}
 		String bookIdStr = request.getParameter("bookId");
 		String chapterIdStr = request.getParameter("chapterId");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		String bookName = "";
 		String chapterTitle="";
 		int userId = 0;
@@ -103,7 +103,7 @@ public class WxChapterSubController {
 			// 章节数据
 			WxChapter chapterModel = chapterService.selectByPrimaryKey(chapterId, EnumType.ChapterStatus_OnLine);
 			if (chapterModel == null)
-				return "wxChapterSub/index";
+				return "myzhangjiecontent/index";
 			else
 				chapterTitle=chapterModel.getTitle();
 			// 付费章节操作
@@ -112,17 +112,17 @@ public class WxChapterSubController {
 				if (!resultMsg.getStatus()) {
 					switch (resultMsg.getNum()) {
 					case EnumType.ResultNum_Login:
-						return "redirect:/wxUser/login";
+						return "redirect:/myuser/login";
 					case EnumType.ResultNum_Pay:
 						attr.addAttribute("chapterId", chapterId);
 						attr.addAttribute("bookId", bookId);
 						attr.addAttribute("fm", fm);
-						return "redirect:/wxPay/pay";
+						return "redirect:/myzhifu/pay";
 					case EnumType.ResultNum_Cons:
 						attr.addAttribute("chapterId", chapterId);
 						attr.addAttribute("bookId", bookId);
-						attr.addAttribute("fm", fm);
-						return "redirect:/wxConsume/subscribe";
+						attr.addAttribute("ch", fm);
+						return "redirect:/myxiaofei/dingyue";
 					}
 				}
 				logger.error(resultMsg.getMsg());
@@ -151,7 +151,7 @@ public class WxChapterSubController {
 		if((from_name==null||from_name.isEmpty())&&fm!=null&&!fm.isEmpty()){
 			CookieUtils.addcookie("from_name", 1*365*24*60*60, response,fm);
 		}
-		return "wxChapterSub/index";
+		return "myzhangjiecontent/index";
 	}
 	
 	
@@ -164,7 +164,7 @@ public class WxChapterSubController {
 	  * @return
 	  * @throws UnsupportedEncodingException
 	  */
-	 @RequestMapping("/vip")
+	 @RequestMapping("/shoufei")
 	 public String getVipContent(HttpServletRequest request, RedirectAttributes attr,HttpServletResponse response,
 				@CookieValue(value = "defaultbookrack", required = true, defaultValue = "") String rackCookie,
 				@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token
@@ -179,7 +179,7 @@ public class WxChapterSubController {
 			}
 			String bookIdStr = request.getParameter("bookId");
 			String chapterIdStr = request.getParameter("chapterId");
-			String fm = request.getParameter("fm");
+			String fm = request.getParameter("ch");
 			String bookName = "";
 			String chapterTitle="";
 			int userId = 0;
@@ -204,7 +204,7 @@ public class WxChapterSubController {
 				// 章节数据
 				WxChapter chapterModel = chapterService.selectByPrimaryKey(chapterId, EnumType.ChapterStatus_OnLine);
 				if (chapterModel == null)
-					return "wxChapterSub/index";
+					return "myzhangjiecontent/index";
 				else
 					chapterTitle=chapterModel.getTitle();
 				// 付费章节操作
@@ -213,17 +213,17 @@ public class WxChapterSubController {
 					if (!resultMsg.getStatus()) {
 						switch (resultMsg.getNum()) {
 						case EnumType.ResultNum_Login:
-							return "redirect:/wxUser/login";
+							return "redirect:/myuser/login";
 						case EnumType.ResultNum_Pay:
 							attr.addAttribute("chapterId", chapterId);
 							attr.addAttribute("bookId", bookId);
 							attr.addAttribute("fm", fm);
-							return "redirect:/wxPay/pay";
+							return "redirect:/myzhifu/pay";
 						case EnumType.ResultNum_Cons:
 							attr.addAttribute("chapterId", chapterId);
 							attr.addAttribute("bookId", bookId);
 							attr.addAttribute("fm", fm);
-							return "redirect:/wxConsume/subscribe";
+							return "redirect:/myxiaofei/dingyue";
 						}
 					}
 					logger.error(resultMsg.getMsg());
@@ -252,7 +252,7 @@ public class WxChapterSubController {
 			if((from_name==null||from_name.isEmpty())&&fm!=null&&!fm.isEmpty()){
 				CookieUtils.addcookie("from_name", 1*365*24*60*60, response,fm);
 			}
-			return "wxChapterSub/index";
+			return "myzhangjiecontent/index";
 		}
 	
 
@@ -266,7 +266,7 @@ public class WxChapterSubController {
 	 * @return
 	 * @throws UnsupportedEncodingException
 	 */
-	@RequestMapping("/defualt")
+	@RequestMapping("/moren")
 	public String getContentByBookId(HttpServletRequest request, RedirectAttributes attr,HttpServletResponse response,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token
 			,@CookieValue(value ="from_name",required = true, defaultValue = "")String from_name)
@@ -279,7 +279,7 @@ public class WxChapterSubController {
 			}
 		}
 		String bookIdStr = request.getParameter("bookId");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		String bookName = "";
 		int userId = 0;
 		String tag="";
@@ -306,11 +306,11 @@ public class WxChapterSubController {
 					if (!resultMsg.getStatus()) {
 						switch (resultMsg.getNum()) {
 						case EnumType.ResultNum_Login:
-							return "wxUser/login";
+							return "myuser/login";
 						case EnumType.ResultNum_Pay:
-							return "WxPay/pay";
+							return "myzhifu/pay";
 						case EnumType.ResultNum_Cons:
-							return "wxConsume/subscribe";
+							return "myxiaofei/dingyue";
 						}
 					}
 					logger.error(resultMsg.getMsg());
@@ -336,11 +336,11 @@ public class WxChapterSubController {
 		if((from_name==null||from_name.isEmpty())&&fm!=null&&!fm.isEmpty()){
 			CookieUtils.addcookie("from_name", 1*365*24*60*60, response,fm);
 		}
-		return "wxChapterSub/index";
+		return "myzhangjiecontent/index";
 	}
 	
 
-	@RequestMapping("/show")
+	@RequestMapping("/dcontent")
 	public String getContentUnlogin(HttpServletRequest request,HttpServletResponse response, RedirectAttributes attr,
 			@CookieValue(value = "defaultbookrack", required = true, defaultValue = "") String rackCookie,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token
@@ -355,7 +355,7 @@ public class WxChapterSubController {
 		}
 		String bookIdStr = request.getParameter("bookId");
 		String chapterIdStr = request.getParameter("chapterId");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		
 		//判断显示哪个Qr
 		String qrCode = request.getParameter("qr");
@@ -389,7 +389,7 @@ public class WxChapterSubController {
 			// 章节数据
 		    chapterModel = chapterService.selectByPrimaryKey(chapterId, EnumType.ChapterStatus_OnLine);
 			if (chapterModel == null)
-				return "wxChapterSub/index";
+				return "myzhangjiecontent/index";
 			else
 				chapterTitle=chapterModel.getTitle();
 			// 付费章节操作
@@ -398,17 +398,17 @@ public class WxChapterSubController {
 				if (!resultMsg.getStatus()) {
 					switch (resultMsg.getNum()) {
 					case EnumType.ResultNum_Login:
-						return "redirect:/wxUser/login";
+						return "redirect:/myuser/login";
 					case EnumType.ResultNum_Pay:
 						attr.addAttribute("chapterId", chapterId);
 						attr.addAttribute("bookId", bookId);
 						attr.addAttribute("fm", fm);
-						return "redirect:/wxPay/pay";
+						return "redirect:/myzhifu/pay";
 					case EnumType.ResultNum_Cons:
 						attr.addAttribute("chapterId", chapterId);
 						attr.addAttribute("bookId", bookId);
 						attr.addAttribute("fm", fm);
-						return "redirect:/wxConsume/subscribe";
+						return "redirect:/myxiaofei/dingyue";
 					}
 				}
 				logger.error(resultMsg.getMsg());
@@ -440,25 +440,25 @@ public class WxChapterSubController {
 		}
 		
 		if(chapterModel!=null&&chapterModel.getShowtype()==1){
-			String url="/wxChapterSub/index?bookId="+bookId+"&chapterId="+chapterId+"&fm="+fm;
+			String url="/myzhangjiecontent/index?bookId="+bookId+"&chapterId="+chapterId+"&ch="+fm;
 			CookieUtils.addcookie("readMark_Show", 1*365*24*60*60, response,url);
 			request.setAttribute("wxChapterSub", chapSubDto);
 			request.setAttribute("wxChapterIntro",chapterModel.getIntro());
 			
 			//计算返回哪个加粉页面
-			String qrStringFormat = "/wxChapterSub/focusQR%s";
+			String qrStringFormat = "/myzhangjiecontent/focusQR%s";
 			String qrString = String.format(qrStringFormat, qrCode);
 			
 			return qrString;
 		}
 		request.setAttribute("wxChapterSub", chapSubDto);
-		return "wxChapterSub/show";
+		return "myzhangjiecontent/dcontent";
 	}
 	
 	/**
 	 * 继续阅读逻辑 这里直接返回用户最后阅读的图书的章节,如果能够找到章节就直接到对应章节,否则就到图书默认页面
 	 * **/
-	@RequestMapping("/readContinue")
+	@RequestMapping("/readgoon")
 	public String readContinue(HttpServletRequest request,HttpServletResponse response, RedirectAttributes attr,
 			@CookieValue(value = "defaultbookrack", required = true, defaultValue = "") String rackCookie,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token,
@@ -476,16 +476,16 @@ public class WxChapterSubController {
 				fm = from_name;
 			}
 			if(bookrack.getBookid() != null && bookrack.getBookid() > 0 && bookrack.getChapterid() != null && bookrack.getChapterid() > 0){
-				return "redirect:/wxChapterSub/index?bookId=" + bookrack.getBookid() + "&chapterId=" + bookrack.getChapterid() + "&fm=" + fm;
+				return "redirect:/myzhangjiecontent/index?bookId=" + bookrack.getBookid() + "&chapterId=" + bookrack.getChapterid() + "&ch=" + fm;
 			}
 			
-			if(!readMark_Show.isEmpty()&&readMark_Show.contains("/wxChapterSub/index?bookId=")){
+			if(!readMark_Show.isEmpty()&&readMark_Show.contains("/myzhangjiecontent/index?bookId=")){
 				return "redirect:"+readMark_Show;
 			}
 		} catch (Exception e) {
 			
 		}
-		return "redirect:/wxBookrack/list";
+		return "redirect:/myshujia/index";
 	}
 	
 	/**

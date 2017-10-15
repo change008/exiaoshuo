@@ -10,13 +10,13 @@
 
 <body>
 <div class="nav-panel bookinfo-title">
-		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;微信支付
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a class="bookinfoback" href="<%=path%>/mynovel/novel?id=${wxBook.id}">«</a>&nbsp;&nbsp;微信支付
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div>
 <div class="wrap">
 	<p class="panel margin-top-10">充值成功</p>
-	 <a class="btn block" href="<%=path%>/wxPay/pay?fm=${fromurl}">再次充值</a> 
-	 <a class="btn block" href="<%=path%>/?fm=${fromurl}">返回看书</a> 
+	 <a class="btn block" href="<%=path%>/myzhifu/pay?ch=${fromurl}">再次充值</a> 
+	 <a class="btn block" href="<%=path%>/?ch=${fromurl}">返回看书</a> 
 </div>
 
 

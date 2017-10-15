@@ -31,7 +31,7 @@ import com.tiexue.mcp.core.service.IWxConsumeService;
 import com.tiexue.mcp.core.service.IWxUserService;
 
 @Controller
-@RequestMapping("wxConsume")
+@RequestMapping("myxiaofei")
 public class WxConsumeController {
 
 	@Resource
@@ -57,7 +57,7 @@ public class WxConsumeController {
 		}
 		String pageNoStr=request.getParameter("pageNo");
 		String pageSizeStr=request.getParameter("pageSize");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		if (userIdStr!=null&&!userIdStr.isEmpty()) {
 			int userId = Integer.parseInt(userIdStr);
 			int pageNo = 0;
@@ -78,7 +78,7 @@ public class WxConsumeController {
 			request.setAttribute("pager", pagerModel);
 			request.setAttribute("fromurl", fm);
 		}
-		return "wxConsume/index";
+		return "myxiaoei/index";
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class WxConsumeController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("subscribe")
+	@RequestMapping("dingyue")
 	public String getSubscribe(HttpServletRequest request,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token) {
 		String userIdStr = "";
@@ -98,7 +98,7 @@ public class WxConsumeController {
 		}
 		String bookIdStr = request.getParameter("bookId");
 		String chapterIdStr = request.getParameter("chapterId");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		int chapterId = 0;
 		int bookId = 0;
 		int userId = 0;
@@ -118,7 +118,7 @@ public class WxConsumeController {
 		request.setAttribute("user", userModel);
 		request.setAttribute("book", bookModel);
 		request.setAttribute("fromurl", fm);
-		return "wxConsume/subscribe";
+		return "myxiaofei/subscribe";
 	}
 	/**
 	 * 处理消费订单

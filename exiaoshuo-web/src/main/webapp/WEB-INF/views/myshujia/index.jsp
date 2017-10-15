@@ -58,7 +58,7 @@
 
 	<div class="nav-panel bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;我的书架
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div> 
 	
 	<div class="panel-bar">
@@ -70,7 +70,7 @@
 	<div class="mod_bookrack">
 	<c:forEach items="${bookracks}" var="racks">
 		<div class="bookrack_item">
-			 <a href="<%=path%>/wxbook/detail?id=${racks.getBookid()}" class="bookrack_cover">
+			 <a href="<%=path%>/mynovel/novel?id=${racks.getBookid()}" class="bookrack_cover">
 			 	<img class="" alt="" src="${racks.getCoverimgs()}">
 			 </a>
 			 <div class="bookrack_info">
@@ -82,12 +82,12 @@
 			 
 			 
 			 <c:if test="${racks.chapterid==null||racks.chapterid<=0}">
-				 <a href="<%=path %>/wxChapterSub/defualt?bookId=${racks.getBookid()}&fm=${fromurl}" class="bookrack_goon">
+				 <a href="<%=path %>/myzhangjiecontent/moren?bookId=${racks.getBookid()}&ch=${fromurl}" class="bookrack_goon">
 				 	继续阅读 &gt;
 				 </a>
 			 </c:if>
 			 <c:if test="${racks.chapterid>0}">
-				<a href="<%=path %>/wxChapterSub/index?bookId=${racks.getBookid()}&chapterId=${racks.chapterid}&fm=${fromurl}" class="bookrack_goon">
+				<a href="<%=path %>/myzhangjiecontent/index?bookId=${racks.getBookid()}&chapterId=${racks.chapterid}&ch=${fromurl}" class="bookrack_goon">
 					继续阅读 &gt;
 				</a>
 			</c:if>

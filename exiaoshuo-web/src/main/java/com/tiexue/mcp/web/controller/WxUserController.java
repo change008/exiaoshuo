@@ -40,7 +40,7 @@ import weixin.popular.bean.sns.SnsToken;
 import weixin.popular.bean.user.User;
 
 @Controller
-@RequestMapping("wxUser")
+@RequestMapping("myuser")
 public class WxUserController {
 
 	// 日志
@@ -57,7 +57,7 @@ public class WxUserController {
 	IWxChapterService wxChapterService;
 	
 	@SuppressWarnings("deprecation")
-	@RequestMapping("/content")
+	@RequestMapping("/model")
 	public String getModel(HttpServletRequest request
 			,@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token) {
 		String userIdStr = "";
@@ -67,7 +67,7 @@ public class WxUserController {
 				userIdStr = pageUser.getId();
 			}
 		}
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		int userId=0;
 		if(userIdStr!=null&&!userIdStr.isEmpty())
 			userId=Integer.parseInt(userIdStr);
@@ -108,7 +108,7 @@ public class WxUserController {
 				
 		}
 		request.setAttribute("fromurl", fm);
-		return "wxUser/index";
+		return "myuser/index";
 	}
 
 	// 转到用户登录界面,记录来源refer,将refer保存到cookie里面,用于登录后的返回
@@ -116,7 +116,7 @@ public class WxUserController {
 	public String login(HttpServletRequest request, HttpServletResponse response
 			,@CookieValue(value ="from_name",required = true, defaultValue = "")String from_name) {
 		String refer = request.getHeader("Referer");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		if (null != refer && !refer.isEmpty()) {
 			Cookie _refCookie = new Cookie("_ref", refer); // 创建一个Cookie对象，并将用户名保存到Cookie对象中
 			_refCookie.setMaxAge(15*60); // 设置Cookie的过期之前的时间，单位为秒
@@ -127,7 +127,7 @@ public class WxUserController {
 		if((from_name==null||from_name.isEmpty())&&fm!=null&&!fm.isEmpty()){
 			CookieUtils.addcookie("from_name", 1*365*24*60*60, response,fm);
 		}
-		return "wxUser/login";
+		return "myuser/login";
 	}
 
 	private WxUserDto userDtoFill(WxUser user) {
@@ -165,9 +165,9 @@ public class WxUserController {
 	 * 请求到userinfo信息之后,将userinfo信息进行保存(数据库不存在openid插入)
 	 * 将用户登录信息写入cookie及session,判断cookie中的_ref页面跳转回登录前网址,完成登录流程
 	 */
-	@RequestMapping("/wxlogindo")
+	@RequestMapping("/wechatdologin")
 	public String wxLoginDo(HttpServletRequest request, HttpServletResponse response, RedirectAttributes attr) {
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		String oauthUrl = SnsAPI.connectOauth2Authorize(WxConstants.WxAppId, WxConstants.WxRedirectUrl, true,
 				WxConstants.WxOauthState);
 		attr.addAttribute("fm", fm);
@@ -179,7 +179,7 @@ public class WxUserController {
 	 * 拿到access_token及openid后,我们发起请求, 请求微信的用户基础信息,包括昵称,性别等
 	 * 请求到用户信息后保存用户信息,用户转到登录前页面
 	 */
-	@RequestMapping("wxoauthcallback")
+	@RequestMapping("wechatlogincallback")
 	public String wxOAuthCallback(HttpServletRequest request, HttpServletResponse response,RedirectAttributes attr, 
 			@CookieValue(value = "defaultbookrack", required = true, defaultValue = "") String rackCookie,
 			@CookieValue(value ="from_name",required = true, defaultValue = "")String from_name) throws Exception {
@@ -190,7 +190,7 @@ public class WxUserController {
 			String fm="";
 			String code = request.getParameter("code");
 			String state = request.getParameter("state");
-		    fm = request.getParameter("fm");
+		    fm = request.getParameter("ch");
 			attr.addAttribute("fm", fm);
 			if(fm==null||fm.isEmpty()){
 				if(from_name!=null&&!from_name.isEmpty()){
@@ -229,38 +229,38 @@ public class WxUserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
-			return "redirect:/wxbook/list";
+			return "redirect:/mynovel/index";
 		}
 
 		// 接下来跳转到一个专门处理登录后逻辑的页面
-		return "redirect:wxloginhandle";
+		return "redirect:wechatloginhandle";
 	}
 
 	/*
 	 * 专门用来处理登录后逻辑的页面
 	 * 
 	 */
-	@RequestMapping("wxloginhandle")
+	@RequestMapping("wechatloginhandle")
 	public String wxLoginHandle(HttpServletRequest request, HttpServletResponse response,RedirectAttributes attr,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token,
 			@CookieValue(value = "_ref", required = true, defaultValue = "") String ref) {
 		try {
-			String fm = request.getParameter("fm");
+			String fm = request.getParameter("ch");
 			attr.addAttribute("fm", fm);
 			// todo:判断是否登录,理论上到这里都是登录后的
 			// todo:跳转到登录前页面
 			if (ref!=""&&!ref.isEmpty()) {
-				if(ref.contains("wxUser/login")){
-					return "redirect:/wxbook/list";
+				if(ref.contains("myuser/login")){
+					return "redirect:/mynovel/index";
 				}
 				return "redirect:"+ref;
 			}
-			return "redirect:/wxbook/list";
+			return "redirect:/mynovel/index";
 		} catch (Exception e) {
 			logger.error("登录报错：" + e.getMessage());
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "redirect:/wxbook/list";
+			return "redirect:/mynovel/list";
 		}
 		
 	}

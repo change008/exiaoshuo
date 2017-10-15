@@ -14,7 +14,7 @@ public class WxConstants {
 	public static final String WxAppSecret = "c1354285cda071be329ffae80c4806d9"; //ok
 
 	// 微信网页授权回调地址
-	public static final String WxRedirectUrl = "http://du.xiaohongwei.cn/wxUser/wxoauthcallback"; //ok
+	public static final String WxRedirectUrl = "http://du.chunsexs.cn/myuser/wechatlogincallback"; //ok
 
 	// 微信网页授权语言编码
 	public static final String WxSnsLang = "zh_CN"; //ok
@@ -26,7 +26,7 @@ public class WxConstants {
 	public static final String WxMch_Key = "t0EZVIvBwvytVL4RYh2H0HuR6sygnDxv"; //ok
 
 	// 微信商户支付后回调url
-	public static final String WxMch_NotifyUrl = "http://du.xiaohongwei.cn/wxPay/wxpaycallback"; //ok
+	public static final String WxMch_NotifyUrl = "http://du.chunsexs.cn/myzhifu/succallback"; //ok
 
 	// 签名方式
 	public static final String WxMch_SignType = "MD5";  //ok

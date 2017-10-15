@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.tiexue.mcp.core.service.IWxCommentService;
 
 @Controller
-@RequestMapping("wxComment")
+@RequestMapping("mycomment")
 public class WxCommentController {
 
 	

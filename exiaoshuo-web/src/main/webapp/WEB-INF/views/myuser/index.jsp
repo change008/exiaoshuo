@@ -8,7 +8,7 @@
 <title>用户中心</title>
 <style>
 	.mod_userheader{
-		background:#ed424b url("https://qidian.gtimg.com/qdm/img/center-header-bg.c36bb.jpg") no-repeat center;
+		background:#ed424b url("<%=path %>/static/image/user/center-header-bg.c36bb.jpg") no-repeat center;
 		background-size:cover;
 		padding-bottom:20px;
 	}
@@ -42,7 +42,7 @@
 <div class="mod_userheader">
 	<div class="nav-panel bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;个人中心
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div> 
 	<div class="mod_userinfo">
 		<p>
@@ -63,18 +63,18 @@
 </div>
 <div class="purchase">
 	小说币&nbsp;&nbsp;&nbsp;<label class="orange">${user.getCoin() }</label><label class="orange"></label>
-	<a href="<%=path%>/wxPay/pay?fm=${fromurl}"><img src="<%=path %>/static/image/purchase.png" height="60"/></a>
+	<a href="<%=path%>/myzhifu/pay?ch=${fromurl}"><img src="<%=path %>/static/image/purchase.png" height="60"/></a>
 </div>
 	
 	<div class="mod_tab_content">
 		<p class="solid"></p>
 		<div class="">
 			<ul class="class_list">
-				<li><a href="<%=path%>/wxPay/index/?fm=${fromurl}"><span
+				<li><a href="<%=path%>/myzhifu/index/?ch=${fromurl}"><span
 						class="txt">充值记录</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>
-				<li><a href="<%=path%>/wxConsume/index/?fm=${fromurl}"><span
+				<li><a href="<%=path%>/myxiaofei/index/?ch=${fromurl}"><span
 						class="txt">消费记录</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>
@@ -88,7 +88,7 @@
 						class="txt">最近阅读</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li> --%>
-				<li><a href="<%=path%>/wxBookrack/list/?fm=${fromurl}"><span
+				<li><a href="<%=path%>/myshujia/index/?ch=${fromurl}"><span
 						class="txt">我的书架</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>
@@ -114,7 +114,7 @@
 function loginout(){
 	var fromurl=$("#fromurl").val();
 	setCookie("wx_gzh_token","",-1);
-	window.location.href="<%=path %>/?fm="+fromurl; 
+	window.location.href="<%=path %>/?ch="+fromurl; 
 }
 </script>
 </html>
