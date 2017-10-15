@@ -12,10 +12,10 @@
 <input type="hidden" id="bookid" name="bookid" value="${bookid }">
 <input type="hidden" id="chapterid" name="chapterid" value="${chapterid }">
 <input type="hidden" id="fromurl" name="fromurl" value="${fromurl }">
-	<header class="nav wrap">
-		<a class="ico52 back" href="javascript:history.go(-1);"></a>充值小说币<a
-			href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-	</header>
+	<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;充值小说币
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div>
 	<div class="mod_content panel c1  "
 		style="padding-top: 8px; padding-bottom: 2px;">
 		<ul class="gray">
@@ -90,13 +90,6 @@
 			<li>充值小说币为虚拟物品，不支持退款！</li>
 		</ul>
 	</div>
-
-	 
-<div style="background-color: #CDAA7D;padding: 8px 10px;">
-	<a style="color:white" href="http://mp.weixin.qq.com/s?__biz=MzU0MDE2NzA4Mw==&mid=100000007&idx=1&sn=09df81a816edb1ec32a0d3bc5fa3b5e5&chksm=7b3c1fc34c4b96d552ccabba5022a03b544ecbadea60b019e5d6de3b444113ce8516d4fa7038#rd">
-		点击关注公众号“<span style="color:#2897ed;border-bottom:1px solid">爱漾小说</span>”方便下次继续阅读
-	</a>
-</div>
  
 	<script>
 		$(".pay_money li").click(function(){

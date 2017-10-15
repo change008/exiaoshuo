@@ -9,9 +9,10 @@
 </head>
 
 <body>
-<header class="nav wrap"> 
- <a class="ico52 back" href="javascript:history.go(-1);"></a>微信支付<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;微信支付
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div>
 <div class="wrap">
 	<p class="panel margin-top-10">充值成功</p>
 	 <a class="btn block" href="<%=path%>/wxPay/pay?fm=${fromurl}">再次充值</a> 
