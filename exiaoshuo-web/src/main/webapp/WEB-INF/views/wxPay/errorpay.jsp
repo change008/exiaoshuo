@@ -9,9 +9,10 @@
 </head>
 
 <body>
-<header class="nav wrap"> 
- <a class="ico52 back" href="javascript:history.go(-1);"></a>微信支付<a href="<%=path%>/" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;微信支付
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div> 
 <div class="wrap">
 	<p class="panel margin-top-10">如果在微信支付的过程中提示您“无法跨号支付”，您可以考虑使用微信二维码支付。</p>
 <!-- 	<a class="btn block" href="#">微信二维码充值</a> -->

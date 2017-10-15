@@ -10,9 +10,10 @@
 </head>
 
 <body>
-<header class="nav wrap"> 
- <a class="ico52 back" href="javascript:history.go(-1);"></a>签到送币<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;签到送币
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div> 
 <div class="wrap" >
 		<div class="mod_content c1 gray">
 	<ul class="gray small">
