@@ -56,6 +56,7 @@ public class WxUserController {
 	@Resource
 	IWxChapterService wxChapterService;
 	
+	@SuppressWarnings("deprecation")
 	@RequestMapping("/content")
 	public String getModel(HttpServletRequest request
 			,@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token) {
@@ -83,13 +84,14 @@ public class WxUserController {
 		userModel.setUsertype(1);
 		userModel.setProvince("beijing");
 		userModel.setCoin(12211);
-		userModel.setDeadline(new Date());
+		userModel.setDeadline(new Date(17,10,20));
 		userModel.setDevicecode("asdf123sd");
 		userModel.setStatus(2);
 		userModel.setMobile("12312312311");
 		userModel.setWeixintoken("asdfasfasfasdfasdfasdf");
 		userModel.setToken("tokken");
-		userModel.setFromname("local");*/
+		userModel.setFromname("local");
+		userModel.setHeadericon("http://img0.imgtn.bdimg.com/it/u=814104885,3650636077&fm=27&gp=0.jpg");*/
 		
 		
 		

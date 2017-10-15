@@ -9,9 +9,10 @@
 </head>
 <body>
 <input type="hidden" id="fromurl" name="fromurl" value="${fromurl }">
-	<header class="nav wrap">
-		<a class="ico52 back" href="javascript:history.go(-1);"></a>个人中心<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-	</header>
+	<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;个人中心
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div> 
 	<div class="panel my">
 		<dl>
 			<dt>

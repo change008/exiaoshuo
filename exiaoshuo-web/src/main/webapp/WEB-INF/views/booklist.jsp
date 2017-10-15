@@ -90,8 +90,8 @@ function appendNovel()
 <div class="mod_tosearch"> <a href="<%=path%>/wxbook/searchlist" class="mod_tosearchinput">作者名 / 书名 / 关键字</a> </div>
 
 <div class="mod_fastico">
-	<a href="<%=path%>/wxPay/pay?fm=${fromurl}"><img src="<%=path%>/static/image/ico1.png" /></a>
-		<a href="<%=path%>/wxBookrack/list?fm=${fromurl}"><img src="<%=path%>/static/image/ico2.png"/></a>
+	<a href="<%=path%>/wxBookrack/list?fm=${fromurl}"><img src="<%=path%>/static/image/ico1.png" /></a>
+		<a href="<%=path%>/wxPay/pay?fm=${fromurl}"><img src="<%=path%>/static/image/ico2.png"/></a>
 		<a href="<%=path%>/wxUser/content/?fm=${fromurl}"><img src="<%=path%>/static/image/ico3.png"/></a>
 </div>
 <div class="mod_block"></div>
