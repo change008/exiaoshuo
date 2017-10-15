@@ -9,11 +9,10 @@
 </head>
 
 <body>
-<header class="nav wrap">
-   <a class="ico52 back" href="javascript:history.go(-1);"></a>
-   <a href="#" style="color:#fff;">章节订阅</a>
-   <a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="<%=path%>/wxbook/detail?id=${wxBook.id}">«</a>&nbsp;&nbsp;订阅章节
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div>
 <div class="mod_content pb">
 <input type="hidden" id="userId" name="userId" value="${user.id}">
 <input type="hidden" id="chapterId" name="chapterId" value="${chapter.id}">

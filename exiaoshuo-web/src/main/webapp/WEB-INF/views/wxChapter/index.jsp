@@ -146,6 +146,7 @@
 			    <a class="chapter" onclick="addbookrack('${wxBook.id}','${chapters.id}')"
 				href="<%=path%>/wxChapterSub/vip?bookId=${wxBook.id}&chapterId=${chapters.id}&fm=${fromurl}">
 					${chapters.title} </a>
+					<span class="fn-right" style="color:#c7a116">VIP</span>
 				</c:if>
 		    </li>
 		</c:forEach>
