@@ -6,29 +6,48 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 <title>消费记录</title>
+<style>
+	thead td{
+		text-align:center;
+		font-weight:bold;
+		background:#333;
+		color:#fff;
+	}
+	tbody td{
+		text-align:center;
+		line-height:35px;
+	}
+	tr:nth-child(even){
+		background:#e8fff9
+	}
+</style>
 </head>
 <body>
-	<header class="nav wrap">
-		<a class="ico52 back" href="javascript:history.go(-1);"></a>消费记录<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-	</header>
-	<div class="mod_tab_cost">
-		<!-- <ul>
-			<li><a href="/member/trade/cost/0.html"><span class="prem">今天之前</span></a></li>
-			<li>今天</li>
-			<li></li>
-		</ul> -->
-	</div>
+	<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;消费记录
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div> 
 	<div class="mod_tab_content shelf">
-		<ul class="current my_orderlist" id="cost">
-			<li><span style="width: 16%;">小说币</span><span
-				style="width: 55%;">消费内容</span><span style="width: 28%;">时间</span></li>
+	<table cellpadding="0" width="100%">
+		<thead>
+			<tr>
+				<td>小说币</td>
+				<td>消费内容</td>
+				<td>时间</td>
+			</tr>
+		</thead>
+		<tbody>
 			<c:forEach items="${consumelist}" var="wxcons">
-				<li>
-				<span style="width: 16%;">${wxcons.getCostcoin()}</span> 
-				<span style="width: 55%;">${wxcons.getCharptertitle()}</span>
-					<span style="width: 28%;">${wxcons.getCreatetime()}</span><li>
+				<tr>
+					<td>${wxcons.getCostcoin()}</td>
+					
+					<td>${wxcons.getCharptertitle()}</td>
+					<td>${wxcons.getCreatetime()}</td>
+				 	 
+				</tr>
 			</c:forEach>
-		</ul>
+		</tbody>
+	</table>
 	</div>
 	<ul id="pager" class="pager">
 		<li class="four"><a class="btn white start"

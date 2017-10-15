@@ -3,6 +3,7 @@ package com.tiexue.mcp.web.controller;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,7 @@ public class WxPayController {
 				userIdStr = pageUser.getId();
 			}
 		}
+		//userIdStr = "123123";
 		String pageNoStr = request.getParameter("pageNo");
 		String pageSizeStr = request.getParameter("pageSize");
 		String fm = request.getParameter("fm");
@@ -80,6 +82,20 @@ public class WxPayController {
 			}
 			List<WxPay> wxPays = wxPayService.getListByPage(userId, pageNo, pageSize);
 			List<WxPayDto> payDtos = wxPayFill(wxPays);
+			
+			/*
+			//测试代码用完删掉
+			for (int i = 0; i < 20; i++) {
+				WxPayDto dtod = new WxPayDto();
+				dtod.setAmount("30");
+				dtod.setCreatetime("2017-10-15");
+				dtod.setCount(3050);
+				dtod.setUnit(1234);
+				dtod.setPaytype(1);
+				dtod.setOrderstatusStr("ok");
+				payDtos.add(dtod);
+			}*/
+			
 			request.setAttribute("wxpaylist", payDtos);
 			// 获取充值记录总数
 			Integer totalRecord = wxPayService.getCountByUserId(userId);

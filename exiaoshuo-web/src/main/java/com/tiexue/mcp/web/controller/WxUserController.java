@@ -74,24 +74,25 @@ public class WxUserController {
 		WxUser userModel = userSer.selectByPrimaryKey(userId);
 		
 		
-		/*userModel = new WxUser();
-		userModel.setId(123456);
-		userModel.setName("小张");
-		userModel.setSignature("asdfasdfasd");
-		userModel.setPwd("asdf");
-		userModel.setSex(1);
-		userModel.setCity("beijing");
-		userModel.setUsertype(1);
-		userModel.setProvince("beijing");
-		userModel.setCoin(12211);
-		userModel.setDeadline(new Date(17,10,20));
-		userModel.setDevicecode("asdf123sd");
-		userModel.setStatus(2);
-		userModel.setMobile("12312312311");
-		userModel.setWeixintoken("asdfasfasfasdfasdfasdf");
-		userModel.setToken("tokken");
-		userModel.setFromname("local");
-		userModel.setHeadericon("http://img0.imgtn.bdimg.com/it/u=814104885,3650636077&fm=27&gp=0.jpg");*/
+		//测试代码用完删掉
+//		userModel = new WxUser();
+//		userModel.setId(123456);
+//		userModel.setName("小张");
+//		userModel.setSignature("asdfasdfasd");
+//		userModel.setPwd("asdf");
+//		userModel.setSex(1);
+//		userModel.setCity("beijing");
+//		userModel.setUsertype(1);
+//		userModel.setProvince("beijing");
+//		userModel.setCoin(12211);
+//		userModel.setDeadline(new Date(17,10,20));
+//		userModel.setDevicecode("asdf123sd");
+//		userModel.setStatus(2);
+//		userModel.setMobile("12312312311");
+//		userModel.setWeixintoken("asdfasfasfasdfasdfasdf");
+//		userModel.setToken("tokken");
+//		userModel.setFromname("local");
+//		userModel.setHeadericon("http://img0.imgtn.bdimg.com/it/u=814104885,3650636077&fm=27&gp=0.jpg");
 		
 		
 		

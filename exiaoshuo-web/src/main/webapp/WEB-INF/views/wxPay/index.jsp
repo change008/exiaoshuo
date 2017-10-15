@@ -6,29 +6,55 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 <title>充值记录</title>
+<style>
+	thead td{
+		text-align:center;
+		font-weight:bold;
+		background:#333;
+		color:#fff;
+	}
+	tbody td{
+		text-align:center;
+		line-height:35px;
+	}
+	tr:nth-child(even){
+		background:#e8fff9
+	}
+</style>
 </head>
 <script type="text/javascript" src="<%=path %>/static/js/jquery/jquery-1.10.2.min.js"></script>
 <body>
-<header class="nav wrap">
-	<a class="ico52 back" href="javascript:history.go(-1);"></a>充值记录<a href="<%=path%>/?fm=${fromurl}" class="ico52 home"></a>
-</header>
+<div class="nav-panel bookinfo-title">
+		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;充值记录
+		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+	</div> 
 <div class="mod_tab_content shelf">
-	<ul class="current my_orderlist" id="pay">
-        <li><span>金额(元)</span><span>小说币</span><span>状态</span><span>时间</span></li>
-        <c:forEach items="${wxpaylist}" var="wxpay">
-	 	<li>
-	 	 <span>${wxpay.amount}</span>
-	 	 <c:if test="${wxpay.paytype==1 }">
-	 	 <span>${wxpay.count}</span>
-	 	 </c:if>
-	 	 <c:if test="${wxpay.paytype==2 }">
-	 	  <span>${wxpay.count}${wxpay.unitName}</span>
-	 	 </c:if>
-	 	 <span>${wxpay.orderstatusStr}</span>
-	 	 <span>${wxpay.createtime}</span>
-	 	</li>
-	 </c:forEach>
-    </ul>
+<table cellpadding="0" width="100%">
+	<thead>
+		<tr>
+			<td>金额（元）</td>
+			<td>小说币</td>
+			<td>状态</td>
+			<td>时间</td>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${wxpaylist}" var="wxpay">
+			<tr>
+				<td>${wxpay.amount}</td>
+				<c:if test="${wxpay.paytype==1 }">
+			 	 <td>${wxpay.count}</td>
+			 	 </c:if>
+			 	 <c:if test="${wxpay.paytype==2 }">
+			 	  <td>${wxpay.count}${wxpay.unitName}</td>
+			 	 </c:if>
+				<td>${wxpay.orderstatusStr}</td>
+				<td>${wxpay.createtime}</td>
+			 	 
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
 </div>
 <ul id="pager" class="pager">
       <li class="four"><a class="btn white start"

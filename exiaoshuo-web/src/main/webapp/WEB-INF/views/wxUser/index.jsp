@@ -6,53 +6,75 @@
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 <title>用户中心</title>
+<style>
+	.mod_userheader{
+		background:#ed424b url("https://qidian.gtimg.com/qdm/img/center-header-bg.c36bb.jpg") no-repeat center;
+		background-size:cover;
+		padding-bottom:20px;
+	}
+	.bookinfo-title{
+		color:white;	
+	}
+	.bookinfoback{
+		color:white;	
+	}
+	.icohome{
+		background-image:url(<%=path %>/static/image/home_white.png);
+	}
+	.mod_userinfo{
+		text-align:center;
+		color:white;
+	}
+	.purchase{
+		height:60px;
+		padding-left:15px;
+		line-height:60px;
+		font-size:18px;
+	}
+	.purchase a {
+		float:right;
+	}
+</style>
+
 </head>
 <body>
 <input type="hidden" id="fromurl" name="fromurl" value="${fromurl }">
+<div class="mod_userheader">
 	<div class="nav-panel bookinfo-title">
 		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;个人中心
 		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
 	</div> 
-	<div class="panel my">
-		<dl>
-			<dt>
-				<img src="${user.getHeadericon()}" class="avatar large">
-			</dt>
-			<dd>
-				<ul>
-					<li><span class="nick blue fn-left fn-text-overflow">${user.getName()}</span>
-						<span class="fn-right">${user.getId()}</span></li>
-					<c:if test="${deadline!=null&&!deadline.isEmpty()}">
-					<li><span class="badge hot">包年VIP (${deadline})</span>
-					</li>
-					</c:if>
-					<c:if test="${deadline==null||deadline.isEmpty()}">
-					<li><span class=" badge normal">${user.getUsertypestr()}</span>
-					</li>
-					</c:if>
-					<li><span class="">小说币&nbsp;&nbsp;&nbsp;<label class="orange">${user.getCoin() }</label><label
-							class="orange"></label></span></li>
-						
-				</ul>
-			</dd>
-		</dl>
+	<div class="mod_userinfo">
+		<p>
+			<img src="${user.getHeadericon()}" class="avatar large">
+		</p>
+		<p>
+			${user.getName()}
+		</p>
+		<p>
+			<c:if test="${deadline!=null&&!deadline.isEmpty()}">
+				<span class="badge hot">包年VIP (${deadline})</span>
+			</c:if>
+			<c:if test="${deadline==null||deadline.isEmpty()}">
+				<span class=" badge normal">${user.getUsertypestr()}</span>
+			</c:if>
+		</p>
 	</div>
+</div>
+<div class="purchase">
+	小说币&nbsp;&nbsp;&nbsp;<label class="orange">${user.getCoin() }</label><label class="orange"></label>
+	<a href="<%=path%>/wxPay/pay?fm=${fromurl}"><img src="<%=path %>/static/image/purchase.png" height="60"/></a>
+</div>
+	
 	<div class="mod_tab_content">
 		<p class="solid"></p>
 		<div class="">
 			<ul class="class_list">
-				<li><a href="<%=path%>/wxPay/pay?fm=${fromurl}"><img
-						src="<%=path%>/static/image/user/icon_pay.png" class="icon"><span
-						class="txt">充值小说币</span><img
-						src="<%=path%>/static/image/user/arrow_r.png"
-						class="arrow_r"></a></li>
-				<li><a href="<%=path%>/wxPay/index/?fm=${fromurl}"><img
-						src="<%=path%>/static/image/user/icon_payrecord.png" class="icon"><span
+				<li><a href="<%=path%>/wxPay/index/?fm=${fromurl}"><span
 						class="txt">充值记录</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>
-				<li><a href="<%=path%>/wxConsume/index/?fm=${fromurl}"><img
-						src="<%=path%>/static/image/user/icon_order.png" class="icon"><span
+				<li><a href="<%=path%>/wxConsume/index/?fm=${fromurl}"><span
 						class="txt">消费记录</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>
@@ -66,13 +88,11 @@
 						class="txt">最近阅读</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li> --%>
-				<li><a href="<%=path%>/wxBookrack/list/?fm=${fromurl}"><img
-						src="<%=path%>/static/image/user/icon_feedback.png" class="icon"><span
+				<li><a href="<%=path%>/wxBookrack/list/?fm=${fromurl}"><span
 						class="txt">我的书架</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>
-			<li><a href="#" onclick="loginout()"><img
-						src="<%=path%>/static/image/user/icon_help.png" class="icon"><span
+			<li><a href="#" onclick="loginout()"><span
 						class="txt">退出登录</span><img
 						src="<%=path%>/static/image/user/arrow_r.png"
 						class="arrow_r"></a></li>

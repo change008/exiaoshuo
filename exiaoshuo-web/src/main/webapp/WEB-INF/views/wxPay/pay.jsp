@@ -24,20 +24,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="mod_content gray c1 ">
-		<h1 style="border: none">选择充值渠道</h1>
-		<ul class="channellist channellistnew" style="width: 100%;">
-			<a href="#">
-				<li class="paychannel" style="width: 100%"><span
-					class="current btn-paychannel" data-channel="13"> <img
-						src="<%=path%>/static/image/user/weixin.png" alt=""
-						class="charge_wx"> <img
-						src="<%=path%>/static/image/user/orangeTriangle.png" alt=""
-						class="charge_wayImg"> | 微信支付
-				</span></li>
-			</a>
-		</ul>
-	</div>
+<div class="mod_block"></div>
 	<ul class="pay_money moneylist margin-top-10">
 		<li><span data-money="3000" data-premium="300" data-type="1">
 		    <span>3000+300小说币</span>
