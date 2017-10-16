@@ -51,7 +51,7 @@
 	</div>
 	<ul id="pager" class="pager">
 		<li class="four"><a class="btn white start"
-			href="<%=path %>/myxiaofei/index?pageNo=0&pageSize=${pager.pageSize }&fm=${fromurl}">第一页</a></li>
+			href="<%=path %>/myxiaofei/index?pageNo=0&pageSize=${pager.pageSize }&ch=${fromurl}">第一页</a></li>
 		<li class="four"><c:if test="${pager.prePage>=0 }">
 				<a class="btn white prev" href="<%=path %>/myxiaofei/index?pageNo=${pager.prePage }&pageSize=${pager.pageSize }&ch=${fromurl}">上一页</a>
 			</c:if> <c:if test="${pager.prePage<0 }">

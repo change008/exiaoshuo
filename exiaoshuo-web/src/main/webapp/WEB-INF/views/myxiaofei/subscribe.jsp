@@ -52,7 +52,7 @@
 		var userId= $("#userId").val();
 		var postData={'bookId':bookId,'chapterId':chapterId,'userId':userId,'autopay':autopay}
 		$.ajax({
-			url:"<%=path%>/wxConsume/handleOrder",
+			url:"<%=path%>/myxiaofei/handleOrder",
 			data:postData,
 			type:"post",
 			dataType:"json",

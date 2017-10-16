@@ -69,7 +69,7 @@
 		</c:if>
 		
 		</li>
-		<li><a href="<%=path %>/myzhangjie/index?bookId=${wxBook.getId()}&ch=${fromurl}" class="btn block white">章节目录</a></li>
+		<li><a href="<%=path %>/myzhangjie/list?bookId=${wxBook.getId()}&ch=${fromurl}" class="btn block white">章节目录</a></li>
 	</ul>
 </div>
 

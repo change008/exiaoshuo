@@ -14,7 +14,7 @@
 </header>
 <div class="wrap">
 	<p class="panel margin-top-10">充值成功</p>
-	 <a class="btn block" href="<%=path%>/wxPay/pay">再次充值</a> 
+	 <a class="btn block" href="<%=path%>/myzhifu/pay">再次充值</a> 
 	 <a class="btn block" href="<%=path%>/">返回看书</a> 
 </div>
 

@@ -139,7 +139,7 @@ public class WxPayController {
 		// todo:如果充值来源于阅读中,我们需要将阅读信息保存到cookie中
 		String bookid = request.getParameter("bookid");
 		String chapterid = request.getParameter("chapterid");
-		String fm = request.getParameter("fm");
+		String fm = request.getParameter("ch");
 		request.setAttribute("bookid", bookid);
 		request.setAttribute("chapterid", chapterid);
 		request.setAttribute("fromurl", fm);

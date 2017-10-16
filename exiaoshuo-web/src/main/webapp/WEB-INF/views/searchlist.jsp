@@ -26,10 +26,10 @@
 <body>
 <div class="nav-panel bookinfo-title" style="background:#f2f2f2;margin-bottom:0">
 		<a class="bookinfoback" href="javascript:history.go(-1)">«</a>&nbsp;&nbsp;搜索小说
-		<a href="<%=path%>/?fm=${fromurl}" class="icohome"></a>
+		<a href="<%=path%>/?ch=${fromurl}" class="icohome"></a>
 	</div>
 
-<form method="post" action="<%=path%>/wxbook/searchlist">
+<form method="post" action="<%=path%>/mynovel/sslist">
 		<div class="searchbox">
 			<div class="searchd1">
 				<input type="text" class="searchtxt" placeholder="输入书名/作者/关键字..."
@@ -49,7 +49,7 @@
 			<c:forEach items="${wxSearchBooks}" var="books">
 		      <li>
 		        
-		      	<a onclick="addbookrack('${books.id}','0')" href="<%=path%>/wxbook/detail?id=${books.id}&fm=${fromurl}"> 
+		      	<a onclick="addbookrack('${books.id}','0')" href="<%=path%>/mynovel/novel?id=${books.id}&ch=${fromurl}"> 
 		      	<img class="fn-left lazy" src="${books.coverImgs}" dataimg="${books.coverImgs}" alt="${books.name}">
 				<div>
 					<p>${books.name}</p>
@@ -72,13 +72,14 @@
 </c:when>
 <c:otherwise>
 
-		
-		<div class="mod_block" style="height:40px;line-height:55px;padding-left:10px;color:#999">大家都在搜</div>
-		<div class="mod_tag">
-			<c:forEach items="${wxBooks}" var="books">
-				<a href="<%=path%>/wxbook/detail?id=${books.id}&fm=${fromurl}">${books.name}</a>
-			</c:forEach>
-		</div>
+		<!-- 
+			<div class="mod_block" style="height:40px;line-height:55px;padding-left:10px;color:#999">大家都在搜</div>
+			<div class="mod_tag">
+				<c:forEach items="${wxBooks}" var="books">
+					<a href="<%=path%>/mynovel/novel?id=${books.id}&ch=${fromurl}">${books.name}</a>
+				</c:forEach>
+			</div>
+		 -->
 </c:otherwise>
 </c:choose>
 

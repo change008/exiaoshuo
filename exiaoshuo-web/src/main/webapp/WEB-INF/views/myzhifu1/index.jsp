@@ -32,20 +32,20 @@
 </div>
 <ul id="pager" class="pager">
       <li class="four"><a class="btn white start"
-			href="<%=path %>/wxPay/index?userId=${userId }&pageNo=0&pageSize=${pager.pageSize }">第一页</a></li>
+			href="<%=path %>/myzhifu/index?userId=${userId }&pageNo=0&pageSize=${pager.pageSize }">第一页</a></li>
 		<li class="four"><c:if test="${pager.prePage>=0 }">
-				<a class="btn white prev" href="<%=path %>/wxPay/index?userId=${userId }&pageNo=${pager.prePage }&pageSize=${pager.pageSize }">上一页</a>
+				<a class="btn white prev" href="<%=path %>/myzhifu/index?userId=${userId }&pageNo=${pager.prePage }&pageSize=${pager.pageSize }">上一页</a>
 			</c:if> <c:if test="${pager.prePage<0 }">
 				<a class="btn white next" href="#" disabled="disabled">上一页</a>
 			</c:if></li>
 		<li class="four"><c:if test="${pager.nextPage>0 }">
 				<a class="btn white prev"
-					href="<%=path %>/wxPay/index?userId=${userId }&pageNo=${pager.nextPage }&pageSize=${pager.pageSize }">下一页</a>
+					href="<%=path %>/myzhifu/index?userId=${userId }&pageNo=${pager.nextPage }&pageSize=${pager.pageSize }">下一页</a>
 			</c:if> <c:if test="${pager.nextPage<=0 }">
 				<a class="btn white next" href="#" disabled="disabled">上一页</a>
 			</c:if></li>
 		<li class="four"><a class="btn white end"
-			href="<%=path %>/wxPay/index?userId=${userId }&pageNo=${pager.lastPageNo }&pageSize=${pager.pageSize }">最末页</a></li>
+			href="<%=path %>/myzhifu/index?userId=${userId }&pageNo=${pager.lastPageNo }&pageSize=${pager.pageSize }">最末页</a></li>
 </ul>
 <%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>

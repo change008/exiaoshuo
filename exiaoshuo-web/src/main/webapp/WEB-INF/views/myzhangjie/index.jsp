@@ -140,21 +140,21 @@
 			    <a class="chapter" onclick="addbookrack('${wxBook.id}','${chapters.id}')"
 				href="<%=path%>/myzhangjiecontent/index?bookId=${wxBook.id}&chapterId=${chapters.id}&ch=${fromurl}">
 					${chapters.title} </a>
-					<span class="fn-right c999">免费</span>
+					<span class="fn-right c999"></span>
 				</c:if>
 				<c:if test="${chapters.getChaptertype()!=0}">
 			    <a class="chapter" onclick="addbookrack('${wxBook.id}','${chapters.id}')"
 				href="<%=path%>/myzhangjiecontent/shoufei?bookId=${wxBook.id}&chapterId=${chapters.id}&ch=${fromurl}">
 					${chapters.title} </a>
-					<span class="fn-right" style="color:#c7a116">VIP</span>
+					<span class="fn-right" style="color:#c7a116">vip</span>
 				</c:if>
 		    </li>
 		</c:forEach>
 	</ul>
 	
 	<div class="mod_pager">
-		<a href="<%=path %>/myzhangjie/index?bookId=${bookId}&pageNo=${pager.prePage }&ch=${fromurl}">上一页</a>&nbsp;&nbsp;
-		<a href="<%=path %>/myzhangjie/index?bookId=${bookId}&pageNo=${pager.nextPage }&ch=${fromurl}">下一页</a>&nbsp;&nbsp;
+		<a href="<%=path %>/myzhangjie/list?bookId=${bookId}&pageNo=${pager.prePage }&ch=${fromurl}">上一页</a>&nbsp;&nbsp;
+		<a href="<%=path %>/myzhangjie/list?bookId=${bookId}&pageNo=${pager.nextPage }&ch=${fromurl}">下一页</a>&nbsp;&nbsp;
 		<a href="javascript:jumpPage()">跳转指定页</a>
 	</div>
 	
@@ -175,7 +175,7 @@
 				alert("超出最大页数");
 			} else {
 				var pageNo = (jumpPage - 1) * pageSize;
-				location.href="<%=path%>/wxChapter/index?bookId="
+				location.href="<%=path%>/myzhangjie/list?bookId="
 						+bookId +"&pageNo="+ pageNo+"&pageto="+jumpPage+"&ch="+encodeURIComponent(fromurl);
 			}
 		}

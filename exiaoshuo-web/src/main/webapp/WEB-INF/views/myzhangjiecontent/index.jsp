@@ -43,7 +43,7 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 						disabled="disabled">上一章节</a>
 				</c:if></li>
 			<li class="mulu"><a class="btn white block" style="border:none"
-				href="<%=path %>/myzhangjie/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&ch=${fromurl}">目录</a></li>
+				href="<%=path %>/myzhangjie/list?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&ch=${fromurl}">目录</a></li>
 			<li class="pn">
 			<c:if test="${wxChapterSub.nextId>0 }">
 			     <c:if test="${wxChapterSub.nextType!=0}">
@@ -81,9 +81,9 @@ fieldset { border:none; border-top:1px solid #ccc; padding: 0.25rem; margin:0 0.
 				<li><a href="<%=path%>/mynovel/novel?id=${wxChapterSub.bookId}&ch=${fromurl}"><i
 						class="ico40 back back2"></i>书页</a></li>
 				<li class="center-li"><a class=""
-					href="<%=path %>/myzhangjie/index?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&ch=${fromurl}">目录</a></li>
+					href="<%=path %>/myzhangjie/list?bookId=${wxChapterSub.bookId}&pageNo=${pageNo}&ch=${fromurl}">目录</a></li>
 				<li><a
-					href="<%=path%>/myshujia/index?fm=${fromurl}">书架
+					href="<%=path%>/myshujia/index?ch=${fromurl}">书架
 						<i class="ico40 bookshelf"></i>
 				</a></li>
 			</ul>

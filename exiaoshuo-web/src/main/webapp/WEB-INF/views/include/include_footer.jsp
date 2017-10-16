@@ -5,11 +5,13 @@
 			+ request.getServerPort() + pathFooter + "/";
 %>
 <footer style="border-top:solid 1px #e3e2e2 ">
+	<!-- 
 	<div style="margin:auto;width:35%;">
 		<img width="100%" src="<%=request.getContextPath()%>/static/image/qrcode.jpg">
 	</div>
-	
 	<p>长按关注公众号，方便下次继续阅读</p>
+	 -->
+	 
 	<p style="line-height: 22px;">
 		<span class="small">©2016 All Rights Reserved.</span> 
 		<span class="small">微盟（呼伦贝尔）文化传媒有限公司</span> 
