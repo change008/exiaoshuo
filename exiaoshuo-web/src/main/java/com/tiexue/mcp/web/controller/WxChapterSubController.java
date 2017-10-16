@@ -340,7 +340,7 @@ public class WxChapterSubController {
 	}
 	
 
-	@RequestMapping("/dcontent")
+	@RequestMapping("/dindex")
 	public String getContentUnlogin(HttpServletRequest request,HttpServletResponse response, RedirectAttributes attr,
 			@CookieValue(value = "defaultbookrack", required = true, defaultValue = "") String rackCookie,
 			@CookieValue(value = "wx_gzh_token", required = true, defaultValue = "") String wx_gzh_token
@@ -452,7 +452,7 @@ public class WxChapterSubController {
 			return qrString;
 		}
 		request.setAttribute("wxChapterSub", chapSubDto);
-		return "myzhangjiecontent/dcontent";
+		return "myzhangjiecontent/show";
 	}
 	
 	/**

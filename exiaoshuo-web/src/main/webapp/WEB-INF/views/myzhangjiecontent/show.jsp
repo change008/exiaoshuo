@@ -38,14 +38,14 @@ fieldset {
 		<ul class="chapter_pager">
 
 			<li class="pn2"><c:if test="${wxChapterSub.preId>0 }">
-					<a class="chapter_prev btn white block" data-cid="${wxChapterSub.preId}" href="<%=path %>/myzhangjiecontent/dcontent?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&ch=${fromurl}&qr=${qr}">上一章</a>
+					<a class="chapter_prev btn white block" data-cid="${wxChapterSub.preId}" href="<%=path %>/myzhangjiecontent/dindex?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.preId}&ch=${fromurl}&qr=${qr}">上一章</a>
 				</c:if> <c:if test="${wxChapterSub.preId<=0 }">
 					<a class="chapter_prev btn white block" href="#" disabled="disabled">上一章</a>
 				</c:if></li>
 			<li class="pn2"><c:if test="${wxChapterSub.nextId>0 }">
 
 					<a onclick="addbookrack('${wxChapterSub.bookId}','${wxChapterSub.nextId}')" class="chapter_next btn block" data-cid="${wxChapterSub.nextId}"
-						href="<%=path %>/myzhangjiecontent/dcontent?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&ch=${fromurl}&qr=${qr}">下一章</a>
+						href="<%=path %>/myzhangjiecontent/dindex?bookId=${wxChapterSub.bookId}&chapterId=${wxChapterSub.nextId}&ch=${fromurl}&qr=${qr}">下一章</a>
 				</c:if> <c:if test="${wxChapterSub.nextId<=0 }">
 					<a class="chapter_next btn block" href="#" disabled="disabled">下一章</a>
 				</c:if></li>
