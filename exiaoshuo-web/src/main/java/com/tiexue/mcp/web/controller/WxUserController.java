@@ -97,7 +97,7 @@ public class WxUserController {
 		
 		
 		if(userModel==null)
-			return "redirect:login";
+			return "redirect:/myuser/login";
 		WxUserDto userDtoModel = userDtoFill(userModel);
 		request.setAttribute("user", userDtoModel);
 		if(userModel!=null&&userDtoModel!=null){
@@ -123,6 +123,7 @@ public class WxUserController {
 			response.addCookie(_refCookie); // 通过response的addCookie()方法将此Cookie对象保存到客户端的Cookie中
 		}
 		request.setAttribute("fromurl", fm);
+		
 		 //把小说来源公共号信息放到cookie中
 		if((from_name==null||from_name.isEmpty())&&fm!=null&&!fm.isEmpty()){
 			CookieUtils.addcookie("from_name", 1*365*24*60*60, response,fm);
