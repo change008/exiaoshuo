@@ -31,7 +31,7 @@
 	<table cellpadding="0" width="100%">
 		<thead>
 			<tr>
-				<td>小说币</td>
+				<td>阅币</td>
 				<td>消费内容</td>
 				<td>时间</td>
 			</tr>

@@ -55,6 +55,9 @@ public class WxConsumeController {
 				userIdStr = pageUser.getId();
 			}
 		}
+		
+		userIdStr="1";
+		
 		String pageNoStr=request.getParameter("pageNo");
 		String pageSizeStr=request.getParameter("pageSize");
 		String fm = request.getParameter("ch");
