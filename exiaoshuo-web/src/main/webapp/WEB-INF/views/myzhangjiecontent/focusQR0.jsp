@@ -1,39 +1,72 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <%@ include file="/WEB-INF/views/include/include_base.jsp"%>
 <style type="text/css">
-.body1 {
-	background: rgb(230, 224, 189);
+* {
+	margin: 0;
+	padding: 0;
 }
 
-.body2 {
-	background: rgb(56, 56, 56);
+body {
+	background: #f6f7f9;
 }
 
-.tc {
+h1 {
+	text-align: center;
+	color: #ff6600;
+	padding: 10px 0;
+	font-size: 22px;
+}
+
+article {
+	line-height: 32px;
+	font-size: 18px;
+	padding: 0 15px;
+}
+
+div.guide {
+	background: #ffffff;
+	border-top: solid 1px #888;
+	text-align: center;
+	font-size: 18px;
+	color: #ff6600;
+}
+
+div.guide p {
+	padding: 10px 20px;
+}
+
+div.hint_con {
+	position: relative;
+	height: 40px;
 	text-align: center;
 }
 
-.box-readmore {
-	box-shadow: 0 -3px 10px -4px rgba(0, 0, 0, 0.3);
-	position: relative;
+.hint_sj {
+	position: absolute;
+	display: block;
+	width: 100%;
+	animation: myfirst 0.3s linear 1s infinite alternate;
+	/* Firefox: */
+	-moz-animation: myfirst 0.3s linear 1s infinite alternate;
+	/* Safari 和 Chrome: */
+	-webkit-animation: myfirst 0.3s linear 1s infinite alternate;
+	/* Opera: */
+	-o-animation: myfirst 0.3s linear 1s infinite alternate;
 }
 
-.content {
-	max-height: 700px;
-	word-break: break-word;
-	overflow: hidden;
+@
+keyframes myfirst {
+	from {margin-top: 0
 }
 
-fieldset {
-	border: none;
-	border-top: 1px solid #ccc;
-	padding: 0.25rem;
-	margin: 0 0.75rem;
-	font-size: 0.975rem;
+to {
+	margin-top: 5px;
+}
 }
 </style>
 <title>${wxChapterSub.bookName}</title>
@@ -43,23 +76,16 @@ fieldset {
 		<nav>
 			<span>${wxChapterSub.title}</span>
 		</nav>
-		<div class="content" style="font-size: 18px;">
-			${wxChapterIntro}</div>
-			
-		<div class="box-readmore">
-		<div style="text-align: left;margin-bottom:5px;font-size: 18px;margin-top: 10px;">
-			 <p style="text-indent: 2em;">由于篇幅限制，请关注公众号继续阅读！</p>
-		</div>
-	    <div style="text-align: center;margin-bottom:5px;font-size: 18px;margin-top: 10px;">
-			<p style="color:red;">后续内容更加精彩，请长按下图二维码，</p>
-			<p style="color:red;">识别二维码关注公众号，继续阅读！</p>
-		</div>
-		<div style="text-align:center;">
-	    	<img style="width:242.5px;heigth:120.5px;" src="<%=path %>/static/image/qrcode_001.jpg">
-		</div> 	
-		 <div style="text-align: center;margin-bottom:5px;font-size: 17px;margin-top: 10px;">
-			如果无法识别二维码可在微信公众号中搜索：<span style="color: #fb6d6b">爱漾小说</span>关注后可继续阅读
-		</div>
+		<div class="content" style="font-size: 18px;">${wxChapterIntro}</div>
+
+		<div class="guide">
+			<p>未完待续...，请关注公众号继续阅读！</p>
+			<p>后续内容更加劲爆哦,长按识别下方二维码关注即可阅读</p>
+			<div class="hint_con">
+				<span class="hint_sj">▼</span>
+			</div>
+			<img src="<%=path%>/static/image/qrcode/chaosexiaoshuo.jpg" width="75%" />
+			<p>长按识别二维码，关注公众号后继续阅读</p>
 		</div>
 	</article>
 </body>

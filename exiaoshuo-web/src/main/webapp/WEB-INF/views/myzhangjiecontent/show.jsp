@@ -50,7 +50,6 @@ fieldset {
 					<a class="chapter_next btn block" href="#" disabled="disabled">下一章</a>
 				</c:if></li>
 		</ul>
-		<%@ include file="/WEB-INF/views/include/include_footer_QR.jsp"%>
 	</article>
 </body>
 

@@ -30,10 +30,10 @@
 		    <span>3000+300阅币</span>
 			<dl>30元(送3元)</dl>
 			</span></li>
-		<li ><span style="border: 1px solid #ff6600;" data-money="5000" data-premium="900" data-type="1">
+		<li ><span style="border: 1px solid #ff6600;" data-money="5000" data-premium="1000" data-type="1">
 		<div class="top_up_send">热</div>
-			<span>5000+900阅币</span>
-			<dl>50元(送9元)</dl>
+			<span>5000+1000阅币</span>
+			<dl>50元(送10元)</dl>
 			</span></li>
 		<li><span data-money="10000" data-premium="2000" data-type="1">
 			<span>10000+2000阅币</span>
