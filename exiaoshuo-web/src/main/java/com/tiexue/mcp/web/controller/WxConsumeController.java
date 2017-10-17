@@ -81,7 +81,7 @@ public class WxConsumeController {
 			request.setAttribute("pager", pagerModel);
 			request.setAttribute("fromurl", fm);
 		}
-		return "myxiaoei/index";
+		return "myxiaofei/index";
 	}
 
 	/**
