@@ -146,12 +146,12 @@ public class WxPayController {
 		String refer = request.getHeader("Referer");
 		if (null != refer && !refer.isEmpty()) {
 			Cookie _refCookie = new Cookie("_refpay", refer); // 创建一个Cookie对象，并将用户名保存到Cookie对象中
-			_refCookie.setMaxAge(5*60); // 设置Cookie的过期之前的时间，单位为秒
+			_refCookie.setMaxAge(10*60); // 设置Cookie的过期之前的时间，单位为秒
 			response.addCookie(_refCookie); // 通过response的addCookie()方法将此Cookie对象保存到客户端的Cookie中
 		}
 		if (null != fm && !fm.isEmpty()) {
 			Cookie _refCookie = new Cookie("_fromurl", fm); // 创建一个Cookie对象，并将用户名保存到Cookie对象中
-			_refCookie.setMaxAge(50); // 设置Cookie的过期之前的时间，单位为秒
+			_refCookie.setMaxAge(5*60); // 设置Cookie的过期之前的时间，单位为秒
 			response.addCookie(_refCookie); // 通过response的addCookie()方法将此Cookie对象保存到客户端的Cookie中
 		}
 		return "/myzhifu/pay";
@@ -281,7 +281,7 @@ public class WxPayController {
 			logger.error("fromurl:"+fm);
 			attr.addAttribute("fm", fm);
 			// todo:在这里处理支付成功的逻辑,跳转到原来阅读地址,或者到首页等
-			if (ref != ""&&(ref.contains("myzhangjiecontent")||ref.contains("myuser")||ref.contains("myzhangjie"))) {
+			if (ref != ""&&(ref.contains("myzhangjiecontent")||ref.contains("myuser")||ref.contains("myzhangjie")||ref.contains("myxiaofei"))) {
 				logger.error("pay _refpay:"+ref);
 				Cookie _refCookie = new Cookie("_refpay", ""); // 创建一个Cookie对象，并将用户名保存到Cookie对象中
 				_refCookie.setMaxAge(5*60); // 设置Cookie的过期之前的时间，单位为秒
